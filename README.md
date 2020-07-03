@@ -1,3 +1,9 @@
+_**TODO:**_
+1. _Incorporate materials from [programming notebooks](https://github.com/CE-Curriculum-Development/mat-cpe-1040)._  
+2. _Rearrange for the _study, apply, present_ structure (e.g. [Lesson and assignment 006](https://github.com/ivogeorg/ce-lesson-and-asst-006-flip-flops/blob/master/lesson-and-assignment.md)._  
+
+---
+
 # CPE 1040 - Spring 2020
 ## Assignement 2: Bouncing Sprite
 
