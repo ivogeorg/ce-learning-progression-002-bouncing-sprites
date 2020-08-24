@@ -1,13 +1,55 @@
-_**TODO:**_
-1. _Incorporate materials from [programming notebooks](https://github.com/CE-Curriculum-Development/mat-cpe-1040)._  
-2. _Rearrange for the _study, apply, present_ structure (e.g. [Lesson and assignment 006](https://github.com/ivogeorg/ce-lesson-and-asst-006-flip-flops/blob/master/lesson-and-assignment.md)._  
+# CPE 1040 - Fall 2020
 
----
+## Learning Progression 002: Bouncing Sprites
 
-# CPE 1040 - Spring 2020
-## Assignement 2: Bouncing Sprite
+This progression continues to introduce new programming language components, revisit those already introduced in more depth, and build up your skills to create more dynamic and compelling programs. You will get used to reading the official documentation for the JavaScript and TypeScript languages frequently as you continue learning to program.  
 
-This is the second assignment for the Spring 2020 installment of the CPE 1040 - Intro to Computer Engineering course at MSU Denver.
+Topics:
+1. [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops
+2. [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux  
+   - [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)  
+3. [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)  
+4. [arrays](https://makecode.microbit.org/javascript/types)    
+5. operators  
+6. expressions  
+7. composite conditions
+8. functions redux
+   - variable scope  
+   - [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)  
+9. classes: encapsulation of data and functions    
+10. classes  
+11. classes 
+12. execution with branches  
+
+Misc:
+- enum arithmetic  
+
+Other materials:
+- program structure  
+- rubrics  
+  - variables  
+  - non-redundant code  
+  - etc...
+  
+ 
+
+### Step 1: 
+
+#### 1. Study
+#### 2. Apply
+#### 3. Present
+
+### Step 2: 
+### Step 3: 
+### Step 4: 
+### Step 5: 
+### Step 6: 
+### Step 7: 
+### Step 8: 
+### Step 9: 
+### Step 10: 
+### Step 11: 
+### Step 12: 
 
 ### Overview
 This assignment asks you to write a simple program using the "sprites" provided by the Game package in the micro:bit. It also asks you to make a video of your program running on your micro:bit, upload it to [Imgur](https://imgur.com/), and reference it in this [README](README.md).
