@@ -75,3 +75,26 @@ This assignment asks you to write a simple program using the "sprites" provided 
 ### Submission demo
 
 My [demo video](https://imgur.com/your/demo/video/url/here) shows my micro:bit executing my program. _(Edit the URL in the parentheses of the hyperlink.)_
+
+
+
+
+
+### Step 13: Execution with branches
+
+- sequential  
+- conditional  
+- loop  
+- function  
+
+#### 1. Study
+[[toc](#table-of-contents)]
+
+#### 2. Apply
+[[toc](#table-of-contents)]
+
+#### 3. Present
+[[toc](#table-of-contents)]
+
+challenge: events
+
