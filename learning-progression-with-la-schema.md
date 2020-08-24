@@ -5,11 +5,12 @@
 This progression continues to introduce new programming language components, revisit those already introduced in more depth, and build up your skills to create more dynamic and compelling programs. You will get used to reading the official documentation for the JavaScript and TypeScript languages frequently as you continue learning to program.  
 
 Topics:
-1. [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops
-2. [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux  
+1. [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops: Controlling the number of iterations  
+2. [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux: 
+   - `else if` cascades  
    - [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)  
-3. [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)  
-4. [arrays](https://makecode.microbit.org/javascript/types)    
+3. [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break): Breaking out of loops    
+4. [arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
 5. operators  
 6. expressions  
 7. composite conditions
