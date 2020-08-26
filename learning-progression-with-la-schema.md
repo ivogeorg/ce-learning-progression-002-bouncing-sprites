@@ -65,112 +65,159 @@ This progression continues to introduce new programming language components, rev
 [[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops: Controlling the number of iterations  
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 2: Breaking out of loops with `break`
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break): Breaking out of loops    
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 3: Arrays are the best use for loops
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 [arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 4: Beyond `if...else`
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux: 
    - `else if` cascades  
    - [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)  
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 5: Operators
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 6: Expressions
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 7: Composite conditions
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 8: Functions and variable scope
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
    - variable scope  
    - [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)  
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 9: Encapsulating data and functions into classes
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 classes: encapsulation of data and functions    
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 10: The separate lives of objects
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 11: Inheritance with classes
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
 ### Step 12: Execution with branches
+[[toc](#table-of-contents)]
 
 #### 1. Study
+[[toc](#table-of-contents)]
 
 #### 2. Apply
+[[toc](#table-of-contents)]
 
 #### 3. Present
+[[toc](#table-of-contents)]
 
   
