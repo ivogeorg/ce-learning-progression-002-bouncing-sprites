@@ -4,13 +4,124 @@
 
 This progression continues to introduce new programming language components, revisit those already introduced in more depth, and build up your skills to create more dynamic and compelling programs. You will get used to reading the official documentation for the JavaScript and TypeScript languages frequently as you continue learning to program.  
 
-Topics:
-1. [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops: Controlling the number of iterations  
-2. [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux: 
+### Step 1: Controlling the number of iterations with `for`
+
+#### 1. Study
+
+[for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops: Controlling the number of iterations  
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 2: Breaking out of loops with `break`
+
+#### 1. Study
+
+[break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break): Breaking out of loops    
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 3: Arrays are the best use for loops
+
+#### 1. Study
+
+[arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 4: Beyond `if...else`
+
+#### 1. Study
+
+[if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux: 
    - `else if` cascades  
    - [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)  
-3. [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break): Breaking out of loops    
-4. [arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 5: Operators
+
+#### 1. Study
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 6: Expressions
+
+#### 1. Study
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 7: Composite conditions
+
+#### 1. Study
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 8: Functions and variable scope
+
+#### 1. Study
+
+   - variable scope  
+   - [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)  
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 9: Encapsulating data and functions into classes
+
+#### 1. Study
+
+classes: encapsulation of data and functions    
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 10: The separate lives of objects
+
+#### 1. Study
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 11: Inheritance with classes
+
+#### 1. Study
+
+#### 2. Apply
+
+#### 3. Present
+
+### Step 12: Execution with branches
+
+#### 1. Study
+
+#### 2. Apply
+
+#### 3. Present
+
+Topics:
+1. [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops: Controlling the number of iterations  
+2. [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break): Breaking out of loops    
+3. [arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
+4. [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux: 
+   - `else if` cascades  
+   - [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)  
 5. operators  
 6. expressions  
 7. composite conditions
@@ -18,8 +129,8 @@ Topics:
    - variable scope  
    - [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)  
 9. classes: encapsulation of data and functions    
-10. classes  
-11. classes 
+10. classes: separate lives of objects  
+11. classes: inheritance   
 12. execution with branches  
 
 Misc:
@@ -34,23 +145,6 @@ Other materials:
   
  
 
-### Step 1: 
-
-#### 1. Study
-#### 2. Apply
-#### 3. Present
-
-### Step 2: 
-### Step 3: 
-### Step 4: 
-### Step 5: 
-### Step 6: 
-### Step 7: 
-### Step 8: 
-### Step 9: 
-### Step 10: 
-### Step 11: 
-### Step 12: 
 
 ### Overview
 This assignment asks you to write a simple program using the "sprites" provided by the Game package in the micro:bit. It also asks you to make a video of your program running on your micro:bit, upload it to [Imgur](https://imgur.com/), and reference it in this [README](README.md).
