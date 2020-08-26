@@ -85,13 +85,14 @@ Several things to notice here:
 1. We need to delimit the number of iterations, in this case 10, which is a `[<cept>]`_constant_.  
 2. We need to keep track of how many iterations we have done so far, which is a variable, incremented each time we complete a pass through the code block.  
 3. In computing, we almost always start `[<cept>]`_counting up_ from 0 and _counting down_ to 0. There are good reasons for that:  
-   1. 1 bit vs 2 bits  
-   2. compare to zero very efficient
+   1. **TODO** 1 bit vs 2 bits  
+   2. **TODO** compare to zero very efficient
 4. It is a widely adopted practice to give constants names in `ALL_CAPS`.  
 
-`[<lernact-ans>]`**Question 1.1.1:** values of i...  
+`[<lernact-ans>]`**Question 1.1.1:** Enumerate the values of the `[<cept>]`_loop variable_ `i` is the block of the `for` loop executed.    
+`[<lernact-ans>]`**Question 1.1.2:** What is the value of the loop variable _after_ the termination of the loop? _Hint: Skim the reference section on [block-scoping](https://makecode.microbit.org/javascript/variables) of variables._  
 
-pattern _zero-start-and-less-than-target-count_
+**TODO** pattern _zero-start-and-less-than-target-count_
    
 One thing that is deficient in controlling the number of iterations of a `while` loop like the example above is that there are bits and pieces of the necessary code all over the place. This is why programming languages almost universally provide the equivalent but much cleaner alternative syntax of the `for` loop. Let's see how we can use it to rewrite the code above and make it much cleaner:
 
@@ -105,17 +106,50 @@ for (let i = 0; i < MAX_ITER; i ++) {    // the loop variable is handled automat
     basic.pause(100)
 }
 ```
+**TODO** Explain `i ++`...
+**TODO** Using the loop variable in the block...
 
-Using the loop variable in the block...
-
-
-[for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops: Controlling the number of iterations  
+The [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loop is extremely versatile. Let's take apart its `[<cept>]`_syntax_:
+```
+for ([initialization]; [condition]; [final-expression])
+   statement
+```
+The `[<cept>]`_square brackets_ `[]` indicate an _optional_ element. All three `[<cept>]`_expressions_ (more on expressions [below]((#step-6-expressions)) - the `[<cept>]`_initialization_, the `[<cept>]`_condition_, and the `[<cept>]`_final expression_ - are optional. There are various cases in which you don't want all three expressions to be included. For example, the `for (;;)` loop form is exactly equivalent to a `while (true)` loop. Note that the `[<cept>]`_expression-delimiting semi-colons_ `;` are **not optional**.
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+1. `[<lernact-prac>]`Write a program that shows a heart icon for odd numbers and pauses for 100 ms for even numbers in a `for` loop from 0 to 10 (not inclusive). _Hint: You will need to use the loop variable of the `for` loop to check for odd and even numbers and have an `if...else` conditional statement in the block of the loop._  
+2. `[<lernact-prac>]`**TODO** The following program:
+```javascript
+basic.forever(function () {
+    for (let i=0; i<=4; i++) {
+        led.plot(i, i)	
+        basic.pause(50)
+        basic.clearScreen()
+    }
+})
+```
+with [video](https://msudenver.yuja.com/Dashboard/Permalink?authCode=754064295&b=1599792&linkType=video).  
+3. `[<lernact-prac>]`Write a program that shows on the micro:bit 21 numbers, one after the other, starting at zero and increasing in _magnitude_, with the _even_ numbers in the interval [0, 20] are _positive_ and the _odd_ numbers in the same interval are _negative_. _Hint: Consider using a `for` loop with the `[<cept>]`_less-than-or-equal_ operator `<=` in the condition expression._  
+
+
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+1. Add your program from 1.2.1 with filename `microbit-program-1-2-1.js`.  
+2. Add your program from 1.2.2 with filename `microbit-program-1-2-2.js`.  
+3. Add your program from 1.2.3 with filename `microbit-program-1-2-3.js`.  
+
+In the [Lab Notebook](README.md):
+1. Link to the program from 1.2.1.  
+2. Link to a demo video showing the execution of the program from 1.2.1.  
+3. Link to the program from 1.2.2.  
+4. Link to a demo video showing the execution of the program from 1.2.2.  
+5. Link to the program from 1.2.3.  
+6. Link to a demo video showing the execution of the program from 1.2.3.  
+
 
 ### Step 2: Breaking out of loops with `break`
 [[toc](#table-of-contents)]
