@@ -62,7 +62,7 @@ Table of Contents
 This progression continues to introduce new programming language components, revisit those already introduced in more depth, and build up your skills to create more dynamic and compelling programs. You will get used to reading the official documentation for the JavaScript and TypeScript languages frequently as you continue learning to program.  
 
 ### Step 1: Controlling the number of iterations with `for`
-[toc](table-of-contents)
+[[toc](#table-of-contents)]
 
 #### 1. Study
 
