@@ -22,7 +22,7 @@ Misc:
 Other materials:
 - program structure  
 - rubrics  
-  - variables  
+  - variable naming (rules & conventions) and usage
   - non-redundant code  
   - coding style
   - etc...
