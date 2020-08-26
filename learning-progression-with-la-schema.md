@@ -67,6 +67,48 @@ This progression continues to introduce new programming language components, rev
 #### 1. Study
 [[toc](#table-of-contents)]
 
+`[<lernact-rd>]`We saw that the `while` loop is very useful for repeating behavior multiple times without having to duplicate code. But what if we wanted to repeat a behavior _exactly_ some number of times? We'll need to use a `[<cept>]`_variable_. Here's how we would go about doing this:
+```javascript
+const MAX_ITER : number = 10  // the number of iterations
+let i : number = 0            // a variable to keep track of how many iterations we have done so far
+
+while (i < MAX_ITER) {
+    basic.showIcon(IconNames.Heart)
+    basic.pause(100)
+    basic.clearScreen()
+    basic.pause(100)
+    
+    i = i + 1                // increment the loop variable
+}
+```
+Several things to notice here:
+1. We need to delimit the number of iterations, in this case 10, which is a `[<cept>]`_constant_.  
+2. We need to keep track of how many iterations we have done so far, which is a variable, incremented each time we complete a pass through the code block.  
+3. In computing, we almost always start `[<cept>]`_counting up_ from 0 and _counting down_ to 0. There are good reasons for that:  
+   1. 1 bit vs 2 bits  
+   2. compare to zero very efficient
+4. It is a widely adopted practice to give constants names in `ALL_CAPS`.  
+
+`[<lernact-ans>]`**Question 1.1.1:** values of i...  
+
+pattern _zero-start-and-less-than-target-count_
+   
+One thing that is deficient in controlling the number of iterations of a `while` loop like the example above is that there are bits and pieces of the necessary code all over the place. This is why programming languages almost universally provide the equivalent but much cleaner alternative syntax of the `for` loop. Let's see how we can use it to rewrite the code above and make it much cleaner:
+
+```javascript
+const MAX_ITER : number = 10
+
+for (let i = 0; i < MAX_ITER; i ++) {    // the loop variable is handled automatically for us
+    basic.showIcon(IconNames.Heart)
+    basic.pause(100)
+    basic.clearScreen()
+    basic.pause(100)
+}
+```
+
+Using the loop variable in the block...
+
+
 [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops: Controlling the number of iterations  
 
 #### 2. Apply
