@@ -29,6 +29,12 @@ ASCII art acknowledgement: [taag](http://patorjk.com/software/taag/)
 _What is [lorem ipsum](https://www.lipsum.com/)?_
 
 
+### 1.3.7
+
+17<sub>10</sub> = 00010001<sub>2</sub>
+
+9<sup>2</sup><sub>10</sub> = 01010001<sub>2</sub>
+
 ### 1.3.8
 
 <img src="images/microbit-program-1-2-300.jpg" alt="Demo of program 1.2.300" width="400" />
