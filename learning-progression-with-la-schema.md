@@ -186,6 +186,7 @@ In the [Lab Notebook](README.md):
 [[toc](#table-of-contents)]
 
 [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux: 
+   - syntax: `else` is optional, very often the condition for `break`    
    - `else if` cascades  
    - [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)  
 
@@ -201,6 +202,8 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
+**TODO:** Switch order with [expressions](#step-6-expressions)?  
+
 #### 2. Apply
 [[toc](#table-of-contents)]
 
@@ -212,6 +215,10 @@ In the [Lab Notebook](README.md):
 
 #### 1. Study
 [[toc](#table-of-contents)]
+
+**TODO:** Switch order with [operators](#step-5-operators)?  
+[JavaScript exrepssions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#Expressions_and_operators)   
+[JavaScript reference: expressions & operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)   
 
 #### 2. Apply
 [[toc](#table-of-contents)]
@@ -266,6 +273,8 @@ classes: encapsulation of data and functions
 #### 1. Study
 [[toc](#table-of-contents)]
 
+**TODO:** `this`
+
 #### 2. Apply
 [[toc](#table-of-contents)]
 
@@ -289,6 +298,14 @@ classes: encapsulation of data and functions
 
 #### 1. Study
 [[toc](#table-of-contents)]
+
+Assembly-level execution:
+- sequential  
+- branches:  
+  - `if...else`  
+  - loops  
+  - function calls  
+  - object methods  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
