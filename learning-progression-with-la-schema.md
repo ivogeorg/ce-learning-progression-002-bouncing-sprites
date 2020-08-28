@@ -160,6 +160,7 @@ In the [Lab Notebook](README.md):
 
 `[<lernact-rd>]`Being so useful in running the same code muliple times, the `while` and `for` loops are ubiquitous in computer programs. This is why computer languages have keywords for them. Just as often as one needs a loop, one is likely to need a way to break out it. There's a keyword for that, too, namely `break`:
 ```javascript
+// Example 2.1
 let stop : boolean = false
 let isHeart : boolean = true
 
@@ -179,32 +180,81 @@ while (true) {
         break
 }
 ```
+**TODO:** Explain all the new syntax.
+
 In this example, when the Boolean `stop` becomes true upon the press of button B, the conditional at the bottom of the `while` loop block will be executed and program execution will jump out of the loop and never reenter. This will effectively stop the program as there is no more code left to execute after the `while` loop. This is a very simple and a bit contrived example, but the [`break`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break) keyword enables the writing of very complex program logic. 
 
-`[<lernact-rd>]`Loops can be `[<cept>]`_nested_ (e.g. a `for` loop inside a `for` loop, or a `for` loop inside a `while` loop) any which way to achieve more complex but regular behavior. For example, the following code lights up the LEDs of the micro:bit one at a time:
+`[<lernact-rd>]`Loops can be `[<cept>]`_nested_ (e.g. a `for` loop inside a `for` loop, or a `for` loop inside a `while` loop) any which way to achieve more complex but regular behavior. For example, the following code lights up the LEDs of the micro:bit one column at a time:
 ```javascript
+// Example 2.2
+let on : boolean = true
 
-// TODO
-
+basic.forever(function () {
+    for (let x = 0; x < 5; x ++) {
+        for (let y = 0; y < 5; y ++) {
+            if (on) 
+                led.plot(x, y)
+            else
+                led.unplot(x, y)
+            basic.pause(50)
+        }
+    }
+    on = !on
+})
 ```
 It is important to note that a `break` only exits the _innermost_ loop, and any outer loops will continue to execute, as shown in this example:
 ```javascript
+// Example 2.3
+let on : boolean = true
+let halfWay : boolean = false
 
-// TODO
+input.onButtonPressed(Button.A, () => { halfWay = !halfWay })
 
+basic.forever(function () {
+    for (let x = 0; x < 5; x ++) {
+        for (let y = 0; y < 5; y ++) {
+            if (halfWay)
+                if (y > 2)
+                    break
+            if (on) 
+                led.plot(x, y)
+            else
+                led.unplot(x, y)
+            basic.pause(50)
+        }
+    }
+    on = !on
+})
 ```
+Notice how, when you toggle button A, the LED lighting pattern goes all the way or stops halfway. The latter case is due to the `break` statement, which cause the inner loop to exit before running through all the values of the loop variable `y`.
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`
-2. `[<lernact-prac>]`
-3. `[<lernact-prac>]`
+1. `[<lernact-prac>]`Write a program like Example 2.2 above, which instead fills the pattern one _row_ at a time.  
+2. `[<lernact-prac>]`Write a program like Example 2.3 above, which instead fills in the other remaining "half" when `halfWay` is toggled true.  
+3. `[<lernact-prac>]`Write a program like Example 2.3 above, which instead breaks on the value of the outer-loop variable `x`.  
+4. `[<lernact-ans>]`Explain the behavior you observe in your program from 2.2.3.
 
 
 #### 3. Present
 [[toc](#table-of-contents)]
 
+In the [programs](programs) directory:
+
+1. Add your program from 2.2.1 with filename `microbit-program-2-2-1.js`.  
+2. Add your program from 2.2.2 with filename `microbit-program-2-2-2.js`.  
+3. Add your program from 2.2.3 with filename `microbit-program-2-2-3.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 2.2.1.  
+2. Link to a demo video for your program from 2.2.1.  
+3. Link to your program from 2.2.2.  
+4. Link to a demo video for your program from 2.2.2.  
+5. Link to your program from 2.2.3.  
+6. Link to a demo video for your program from 2.2.3.
+7. Write your explanation for 2.2.4.  
 
 
 ### Step 3: Arrays are the best use for loops
