@@ -263,13 +263,59 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-[arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
+`[<lernact-rd>]`**TODO:** Data types: primitive vs composite
+```javascript
+// Example 3.1
+
+// TOOD primitive data types
+```
+
+`[<lernact-rd>]`**TODO:** Arrays are a composite data type which is a linear sequence of elements of the same type, called the `[<cept>]`_base type_. Example...
+```javascript
+// Example 3.2
+
+// TOOD simple declaration and use of an array
+```
+**TODO:** Things to notice
+
+**TODO:** Sketch of memory storage for primitive types and arrays...
+<img src="" alt="" width="" />
+**TODO:** What are arrays good for and why are loops and [arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
+ used together so often...
+```javascript
+// Example 3.3
+
+// TOOD looping through an array
+```
+
+**TODO:** A glimpse of multidimensional arrays...
+
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+1. `[<lernact-prac>]`**TODO:** Simple extension of example 3.3  
+2. `[<lernact-prac>]`**TODO:** Loop "backwards" with a hint on `for` starting at the "end" and decreasing with `i --`.  
+3. `[<lernact-prac>]`**TODO:** Multidimensional array for lighting up rows and columns in various orders...   
+
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+
+1. Add your program from 3.2.1 with filename `microbit-program-2-2-1.js`.  
+2. Add your program from 3.2.2 with filename `microbit-program-2-2-2.js`.  
+3. Add your program from 3.2.3 with filename `microbit-program-2-2-3.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 3.2.1.  
+2. Link to a demo video for your program from 3.2.1.  
+3. Link to your program from 3.2.2.  
+4. Link to a demo video for your program from 3.2.2.  
+5. Link to your program from 3.2.3.  
+6. Link to a demo video for your program from 3.2.3.
+
 
 ### Step 4: Beyond `if...else`
 [[toc](#table-of-contents)]
@@ -278,7 +324,7 @@ In the [Lab Notebook](README.md):
 [[toc](#table-of-contents)]
 
 [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux: 
-   - syntax: `else` is optional, very often the condition for `break`    
+   - syntax: `else` is optional, very often the condition for `break`, as seen in a previous step    
    - `else if` cascades  
    - [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)  
 
