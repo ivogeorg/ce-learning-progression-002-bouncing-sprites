@@ -379,7 +379,7 @@ Notice how all but the first `case` clauses as well as the `default` clause are 
 
 1. `[<lernact-prac>]`**TODO:** `enum` type names are represented as numbers under the hood. Cycle through the icons and show only "even" icons...
 2. `[<lernact-prac>]`**TODO:** cycle through the icons and show them for a time proportional to the decade of their index, rounded up to the nearest decade...  
-3. `[<lernact-prac>]`**TODO:** cycle through the icons and, using a `switch` statement show them 3 times if divisible by 3, 5 if div by 5, 2 if even, and once otherwise...   
+3. `[<lernact-prac>]`**TODO:** cycle through the icons and, using a `switch` statement show them as many times as the smallest odd divisor of their index (3 times if divisible by 3, 5 if div by 5, 2 if even, and once otherwise) and 2 if even...   
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -406,19 +406,53 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
+`[<lernact-rd>]`**TODO:** what are operators
+**TODO:** assignment vs equality
+**TODO:** comparison
+**TODO:** arithmetic
+**TODO:** binary and unary
+**TODO:** precedence
+
+**TODO:** a look at the documentation, operators vs functions
+
+
 **TODO:** Switch order with [expressions](#step-6-expressions)?  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+1. `[<lernact-prac>]`**TODO:** ???   
+2. `[<lernact-prac>]`**TODO:** ???   
+3. `[<lernact-prac>]`**TODO:** ???   
+
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+
+1. Add your program from 5.2.1 with filename `microbit-program-5-2-1.js`.  
+2. Add your program from 5.2.2 with filename `microbit-program-5-2-2.js`.  
+3. Add your program from 5.2.3 with filename `microbit-program-5-2-3.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 5.2.1.  
+2. Link to a demo video for your program from 5.2.1.  
+3. Link to your program from 5.2.2.  
+4. Link to a demo video for your program from 5.2.2.  
+5. Link to your program from 5.2.3.  
+6. Link to a demo video for your program from 5.2.3.
+
 
 ### Step 6: Expressions
 [[toc](#table-of-contents)]
 
 #### 1. Study
 [[toc](#table-of-contents)]
+
+`[<lernact-rd>]`**TODO:** what are expressions
+**TODO:** operators & expressions
+**TODO:** expressions vs statements
 
 **TODO:** Switch order with [operators](#step-5-operators)?  
 [JavaScript exrepssions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#Expressions_and_operators)   
@@ -427,8 +461,32 @@ In the [Lab Notebook](README.md):
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+1. `[<lernact-prac>]`**TODO:** conditionals - equality  
+2. `[<lernact-prac>]`**TODO:** conditionals - comparisons  
+3. `[<lernact-prac>]`**TODO:** expressions in rvalues of assignments  
+4. `[<lernact-prac>]`**TODO:** expressions in arguments of functions    
+
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+
+1. Add your program from 6.2.1 with filename `microbit-program-6-2-1.js`.  
+2. Add your program from 6.2.2 with filename `microbit-program-6-2-2.js`.  
+3. Add your program from 6.2.3 with filename `microbit-program-6-2-3.js`.
+4. Add your program from 6.2.4 with filename `microbit-program-6-2-4.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 6.2.1.  
+2. Link to a demo video for your program from 6.2.1.  
+3. Link to your program from 6.2.2.  
+4. Link to a demo video for your program from 6.2.2.  
+5. Link to your program from 6.2.3.  
+6. Link to a demo video for your program from 6.2.3.
+7. Link to your program from 6.2.4.  
+8. Link to a demo video for your program from 6.2.4.
+
 
 ### Step 7: Composite conditions
 [[toc](#table-of-contents)]
@@ -436,11 +494,35 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
+`[<lernact-rd>]`**TODO:** logical operator
+**TODO:** Boolean algebra
+**TODO:** composite conditions
+
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+1. `[<lernact-prac>]`**TODO:** using `led.plot()`, blink a 3x3 square in the middle of the 5x5 LED matrix...
+2. `[<lernact-prac>]`**TODO:** using `led.plot()`, blink a 3x3 square along the top-left botton-right diagonal...
+3. `[<lernact-prac>]`**TODO:** using `led.plot()`, blink a 3x3 square clockwise and counterclockwise in the corners of the 5x5 LED matrix, using...
+
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+
+1. Add your program from 7.2.1 with filename `microbit-program-7-2-1.js`.  
+2. Add your program from 7.2.2 with filename `microbit-program-7-2-2.js`.  
+3. Add your program from 7.2.3 with filename `microbit-program-7-2-3.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 7.2.1.  
+2. Link to a demo video for your program from 7.2.1.  
+3. Link to your program from 7.2.2.  
+4. Link to a demo video for your program from 7.2.2.  
+5. Link to your program from 7.2.3.  
+6. Link to a demo video for your program from 7.2.3.
+
 
 ### Step 8: Functions and variable scope
 [[toc](#table-of-contents)]
