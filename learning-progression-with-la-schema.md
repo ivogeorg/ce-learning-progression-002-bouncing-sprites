@@ -279,7 +279,7 @@ In the [Lab Notebook](README.md):
 **TODO:** Things to notice
 
 **TODO:** Sketch of memory storage for primitive types and arrays...
-<img src="" alt="" width="" />
+**TODO:**<img src="" alt="" width="" />
 **TODO:** What are arrays good for and why are loops and [arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
  used together so often...
 ```javascript
@@ -288,7 +288,7 @@ In the [Lab Notebook](README.md):
 // TOOD looping through an array
 ```
 
-**TODO:** A glimpse of multidimensional arrays...
+`[<lernact-rd>]`**TODO:** A glimpse of multidimensional arrays...
 
 
 #### 2. Apply
@@ -323,16 +323,82 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-[if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) redux: 
-   - syntax: `else` is optional, very often the condition for `break`, as seen in a previous step    
-   - `else if` cascades  
-   - [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)  
+`[<lernact-rd>]`Branching upon conditions is one of the most powerful features of programming languages. The basic `if...else` statement that we encountered earlier allows a `[<cept>]`_two-way branch_ in the execution of a program's code. Here we will introduce some further abilities of the statement. The first one, which we already saw in a previous section, is the `[<cept>]`_conditional one-way branch_:
+```javascript
+// Example 4.1
+
+// TODO: if without else
+```
+This is essentially an `if` statement without an `else` `[<cept>]`_clause_: if the condition is false, no branching happens.
+
+The second variety gives us the option of having more than 2 branches at the same point, by extending extending the `else` clause with its own `if` statements:
+```javascript
+// Example 4.2
+
+// TODO: if...else cascade
+```
+This is called an `if...else` cascade. The most important thing to notice is that, as we descend down the cascade, we test for _increasingly narrow_ cases, and we should write the conditions accordingly. Let's illustrate with an example:
+```javascript
+// Example 4.3
+
+// TODO: test for even and then test for 40
+```
+Obviously, if the number is not even, it cannot be 40. Graphically, an `if...else` cascade can be illustrated as a `[<cept>]`_decision tree_. 
+**TODO:** <img src="" alt="" width="" />
+In general, the cases one level down the cascade should belong to the branch that was taken in the level above them.
+
+Looking at the syntax of the [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement in the JavaScript documentation, we see a generalization of all the cases we have seen:
+```
+// Example 4.4
+
+// TODO: if...else syntax
+```
+
+`[<lernact-rd>]`We have seen that `if...else` cascades, for all their power, can be quite error-prone and hard to read (and, so, fix if erroneous). There is another statement that can be used instead, namely the `switch` statement. Here's the cascade from Example 4.2, written as a `switch` statement:
+```javascript
+// Example 4.5
+
+// TODO: switch
+```
+Notice two important points:
+1. Each `case` should have a `break` unless we intentionally want to _fall through_ and do the same thing for more than one case.  
+2. The `default` clause is a `[<cept>]`_catch-all_, just like the final `else` in an `if...else` cascade.   
+
+Once again, let's take a look at syntax for the `switch` statement in the documentation:
+```
+// Example 4.6
+
+// TODO: switch syntax
+```
+Notice how all but the first `case` clauses as well as the `default` clause are all _optional_.
+
+**TODO:** Finally, `switch` statements are best for numerical equalities and `if...else` cascades are best for `[<cept>]`_intervals_ and `[<cept>]`_inequalities_...  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+1. `[<lernact-prac>]`**TODO:** `enum` type names are represented as numbers under the hood. Cycle through the icons and show only "even" icons...
+2. `[<lernact-prac>]`**TODO:** cycle through the icons and show them for a time proportional to the decade of their index, rounded up to the nearest decade...  
+3. `[<lernact-prac>]`**TODO:** cycle through the icons and, using a `switch` statement show them 3 times if divisible by 3, 5 if div by 5, 2 if even, and once otherwise...   
+
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+
+1. Add your program from 4.2.1 with filename `microbit-program-4-2-1.js`.  
+2. Add your program from 4.2.2 with filename `microbit-program-4-2-2.js`.  
+3. Add your program from 4.2.3 with filename `microbit-program-4-2-3.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 4.2.1.  
+2. Link to a demo video for your program from 4.2.1.  
+3. Link to your program from 4.2.2.  
+4. Link to a demo video for your program from 4.2.2.  
+5. Link to your program from 4.2.3.  
+6. Link to a demo video for your program from 4.2.3.
+
 
 ### Step 5: Operators
 [[toc](#table-of-contents)]
