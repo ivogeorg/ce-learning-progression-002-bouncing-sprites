@@ -410,6 +410,7 @@ In the [Lab Notebook](README.md):
 **TODO:** assignment vs equality
 **TODO:** comparison
 **TODO:** arithmetic
+**TODO:** overloading for strings!!!
 **TODO:** binary and unary
 **TODO:** precedence
 
@@ -421,8 +422,8 @@ In the [Lab Notebook](README.md):
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** ???   
-2. `[<lernact-prac>]`**TODO:** ???   
+1. `[<lernact-prac>]`**TODO:** string concat...   
+2. `[<lernact-prac>]`**TODO:** string as array...   
 3. `[<lernact-prac>]`**TODO:** ???   
 
 #### 3. Present
@@ -530,14 +531,61 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-   - variable scope  
-   - [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)  
+`[<lernact-rd>]`Blocks, that is lines of code enclosed in curly braces `{}`, not only encapsulate code, but also define `[<cept>]`_variable scope_. The scope of a variable is the region of code where it is defined and accessible. Variables defined in a block are defined and visible to all the code inside the block, including any _nested_ blocks, but **not** outside the block where they are defined. This is called `[<cept>]`_block scoping_ and is an important capability that allows well-organized and modular programs. Let's revisit the various block scopes that we have encountered so far:
+```javascript
+// Example 8.1
+
+// TODO: standalone block
+```
+This is just a standalone block that does not change the way the lines of code inside are executed, but still performs its scoping function. This kind of block is rarely encountered as it is effectively equivalent to the `[<cept>]`_global scope_, the highest "block" in the nesting hierarchy. Variables declared at this level are called, naturally, `[<cept>]`_global variables_. We have used them a number of times so far.
+
+Loops and conditional statements come with blocks whenever there are more than one line of code to encapsulate:
+```javascript
+// Example 8.2
+
+// TODO: loop conditional nesting hierarchy
+```
+Loops and conditional statements are very frequently nested within one another, creating a complex block scoping hierarchy. A good rule of thumb is to declare variables as close as possible to the code that will use them. This allows the programmer to focus on a narrow part of the hierarchy (containing block and contained block) around the variable and get the scoping correct. **TODO:** In the example above...
+
+**TODO:** Functions
+```javascript
+// Example 8.3
+
+// TODO: function example
+```
+**TODO:** Thorough review, including scoping, parameters, arguments and locals, calls and [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)... Data flow throught the scope hierarchy...
+
+`[<lernact-rd>]`**TODO:** Argument pass by value and reference (see Classes)
+
+`[<lernact-rd>]`**TODO:** Nested function declarations...  (**TODO:** Declaration vs definition in JS?) Returning functions...
+
+`[<lernact-rd>]`**TODO:** A glimpse at `[<cept>]`_stack frames_...
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+1. `[<lernact-prac>]`**TODO:** trailing case for comma-delimited _strings_: declaring the loop variable before the loop, so it can be used after the loop     
+2. `[<lernact-prac>]`**TODO:** declaring the loop variable before the loop, so it can be used as a diagnostic about how the loop terminated (terminal expression or `break`)...    
+3. `[<lernact-prac>]`**TODO:** a number of custom functions with a piece of data passed as argument and re-assigned to return value...    
+
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+
+1. Add your program from 8.2.1 with filename `microbit-program-8-2-1.js`.  
+2. Add your program from 8.2.2 with filename `microbit-program-8-2-2.js`.  
+3. Add your program from 8.2.3 with filename `microbit-program-8-2-3.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 8.2.1.  
+2. Link to a demo video for your program from 8.2.1.  
+3. Link to your program from 8.2.2.  
+4. Link to a demo video for your program from 8.2.2.  
+5. Link to your program from 8.2.3.  
+6. Link to a demo video for your program from 8.2.3.
+
 
 ### Step 9: Encapsulating data and functions into classes
 [[toc](#table-of-contents)]
