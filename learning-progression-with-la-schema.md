@@ -85,8 +85,9 @@ Several things to notice here:
 1. We need to delimit the number of iterations, in this case 10, which is a `[<cept>]`_constant_.  
 2. We need to keep track of how many iterations we have done so far, which is a variable, incremented each time we complete a pass through the code block.  
 3. In computing, we almost always start `[<cept>]`_counting up_ from 0 and _counting down_ to 0. There are good reasons for that:  
-   1. **TODO** 1 bit vs 2 bits  
+   1. **TODO** 1 bit vs 2 bits, always 1 bit more to represent the same number of numbers! 
    2. **TODO** compare to zero very efficient
+   3. **TODO** convention to avoid the _off-by-one_ error  
 4. It is a widely adopted practice to give constants names in `ALL_CAPS`.  
 
 `[<lernact-ans>]`**Question 1.1.1:** Enumerate the values of the `[<cept>]`_loop variable_ `i` is the block of the `for` loop executed.    
@@ -157,13 +158,54 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-[break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break): Breaking out of loops    
+`[<lernact-rd>]`Being so useful in running the same code muliple times, the `while` and `for` loops are ubiquitous in computer programs. This is why computer languages have keywords for them. Just as often as one needs a loop, one is likely to need a way to break out it. There's a keyword for that, too, namely `break`:
+```javascript
+let stop : boolean = false
+let isHeart : boolean = true
+
+input.onButtonPressed(Button.A, () => { isHeart = !isHeart })   // "Arrow" functions are best for short code passed as argument to a function.
+input.onButtonPressed(Button.B, () => { stop = true })
+
+while (true) {
+    if (isHeart)                                                 // If only one line, no block braces are required.
+        basic.showIcon(IconNames.Heart)
+    else
+        basic.showIcon(IconNames.Butterfly)
+    basic.pause(100)
+    basic.clearScreen()
+    basic.pause(100)
+    
+    if (stop)
+        break
+}
+```
+In this example, when the Boolean `stop` becomes true upon the press of button B, the conditional at the bottom of the `while` loop block will be executed and program execution will jump out of the loop and never reenter. This will effectively stop the program as there is no more code left to execute after the `while` loop. This is a very simple and a bit contrived example, but the [`break`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break) keyword enables the writing of very complex program logic. 
+
+`[<lernact-rd>]`Loops can be `[<cept>]`_nested_ (e.g. a `for` loop inside a `for` loop, or a `for` loop inside a `while` loop) any which way to achieve more complex but regular behavior. For example, the following code lights up the LEDs of the micro:bit one at a time:
+```javascript
+
+// TODO
+
+```
+It is important to note that a `break` only exits the _innermost_ loop, and any outer loops will continue to execute, as shown in this example:
+```javascript
+
+// TODO
+
+```
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+1. `[<lernact-prac>]`
+2. `[<lernact-prac>]`
+3. `[<lernact-prac>]`
+
+
 #### 3. Present
 [[toc](#table-of-contents)]
+
+
 
 ### Step 3: Arrays are the best use for loops
 [[toc](#table-of-contents)]
