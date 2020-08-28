@@ -601,6 +601,7 @@ classes: encapsulation of data and functions
 #### 3. Present
 [[toc](#table-of-contents)]
 
+
 ### Step 10: The separate lives of objects
 [[toc](#table-of-contents)]
 
@@ -615,6 +616,7 @@ classes: encapsulation of data and functions
 #### 3. Present
 [[toc](#table-of-contents)]
 
+
 ### Step 11: Inheritance with classes
 [[toc](#table-of-contents)]
 
@@ -627,12 +629,17 @@ classes: encapsulation of data and functions
 #### 3. Present
 [[toc](#table-of-contents)]
 
+
 ### Step 12: Execution with branches
 [[toc](#table-of-contents)]
 
 #### 1. Study
 [[toc](#table-of-contents)]
 
+`[<lernact-rd>]`**TODO:** User code to cpu instructions: overview of the compilation process...   
+
+**TODO:** How do the language constructs - loops, conditional statements, functions, and classes - actually execute...
+**TODO:**<img src="" alt="" width="" />
 Assembly-level execution:
 - sequential  
 - branches:  
@@ -640,9 +647,13 @@ Assembly-level execution:
   - loops  
   - function calls  
   - object methods  
+  
+`[<lernact-ans>]`**TODO:** questions on 
 
 #### 2. Apply
 [[toc](#table-of-contents)]
+
+1. `[<lernact-disc>]`**[Optional challenge]** 
 
 #### 3. Present
 [[toc](#table-of-contents)]
