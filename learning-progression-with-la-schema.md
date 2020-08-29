@@ -656,15 +656,44 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** Limited ability to change the behavior of the `game.LedSprite()` => Inheritance
+`[<lernact-rd>]`**TODO:** What if we generally like the capabilities of `LedSprite` objects, but we are not quite satisfied? What if we want to tweak them a little bit but don't actually want to go out of our way to rewrite the whole class? One of the foremost features of object-oriented programming is the ability to fine tune classes by extending and/or specifying the object behavior they define. Because we are actually creating a new class on top of an existing one, without changing the existing one, this programming language feature is called `[<cept>]`_inheritance_. The class we are building on top of is called the `[<cept>]`_superclass_ or `[<cept>]`_base class_, and our derived class is called a `[<cept>]`_subclass_. 
+
+In this step, we'll build a `HaloSprite` class that is almost exactly like the base `LedSprite`, but it has an optional "halo" around it which we can toggle with a button. **TODO:** 8 adjacent positions, brightness => halo
+
+**TODO:** using a 2-dimensional array to define the halo
+
+**TODO:** we only want to show the halo around the sprite, not having trailing behind and leaving lit LEDs, so we need to get the current position and brightness, plot the halo, pause briefly so the halo is visible, and then unplot it because the sprite will move away from the current position at the next instant
+
+**TODO:** getting the current coordinates and brightness
+
+**TODO:** plotting and unplotting the halo using a `for` loop
+
+**TODO:** modifying the existing `move()` method to add the halo
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-**TODO:** Steps toward the target program...  
+1. `[<lernact-prac>]`**TODO:** Base program...  
+2. `[<lernact-prac>]`**TODO:** Program to plot and unplot a halo around a certain position, toggled by button B...  
+3. `[<lernact-prac>]`**TODO:** `HaloSprite`
 
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+
+1. Add your program from 11.2.1 with filename `microbit-program-11-2-1.js`.  
+2. Add your program from 11.2.2 with filename `microbit-program-11-2-2.js`.  
+3. Add your program from 11.2.3 with filename `microbit-program-11-2-3.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 11.2.1.  
+2. Link to a demo video for your program from 11.2.1.  
+3. Link to your program from 11.2.2.  
+4. Link to a demo video for your program from 11.2.2.  
+5. Link to your program from 11.2.3.  
+6. Link to a demo video for your program from 11.2.3.
 
 
 ### Step 12: Execution with branches
@@ -673,9 +702,9 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** User code to cpu instructions: overview of the compilation process...   
+`[<lernact-rd>]`**TODO:** How do the lines of program code that we write actually get executed. They don't, until they are transformed into processor instructions. User code to cpu instructions: overview of the compilation process...   
 
-**TODO:** How do the language constructs - loops, conditional statements, functions, and classes - actually execute...
+**TODO:** How do the language constructs - loops, conditional statements, functions, and classes - affect the execution order of sequences of processor instructions...
 **TODO:**<img src="" alt="" width="" />
 Assembly-level execution:
 - sequential  
@@ -685,9 +714,6 @@ Assembly-level execution:
   - function calls  
   - object methods  
   
-`[<lernact-ans>]`**TODO:** questions on how various cases of code will actually be executed (picking from the above scenarios)...  
-`[<lernact-ans>]`**TODO:** multiple `forever` loops (read [Reactive](https://makecode.microbit.org/device/reactive)...    
-
 #### 2. Apply
 [[toc](#table-of-contents)]
 
