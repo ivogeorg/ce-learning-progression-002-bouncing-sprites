@@ -566,7 +566,7 @@ Loops and conditional statements are very frequently nested within one another, 
 
 1. `[<lernact-prac>]`**TODO:** trailing case for comma-delimited _strings_: declaring the loop variable before the loop, so it can be used after the loop     
 2. `[<lernact-prac>]`**TODO:** declaring the loop variable before the loop, so it can be used as a diagnostic about how the loop terminated (terminal expression or `break`)...    
-3. `[<lernact-prac>]`**TODO:** a number of custom functions with a piece of data passed as argument and re-assigned to return value...    
+3. `[<lernact-prac>]`**TODO:** a number of custom functions with a piece of data passed as argument and re-assigned to return value... (nested function calls)... the `Point` "class" without classes...    
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -593,10 +593,20 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-classes: encapsulation of data and functions    
+`[<lernact-rd>]`As we saw in the last program of the previous step, it became quite tedious to pass our variable around to many functions and re-assigning the changed value to keep up. This was actually such a big problem in early computing that it brought about the introduction of one of the most powerful programming paradigms, `[<cept>]`_object-oriented programming_. Objects are `[<cept>]`_user-defined composite types_, which encapsulate data along with the `[<cept>]`_methods_ (that is, functions) that can be executed against them. Objects are defined by `[<cept>]`_classes_, which are essentially _object templates_ or _object blueprints_. With this powerful programming language construct, we don't need to pass data around to various functions, trying to keep the data updated at all times. The object-oriented paradigm turn this around: now we create objects which encapsulate this data and call their methods to manipulate the data; all the bookkeeping is taken care for us.
+
+**TODO:** the `Point` class, fields, constuctor, methods, `this`, instantiation, object lifecycle   
+
+**TODO:** the `game.LedSprite`   
+
+**TODO:** So, how is this a "user-defined type"? `string`, behavior, variables!  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
+
+1. `[<lernact-prac>]`**TODO:** class point with brightness (3-dimensional point) with small program...  
+2. `[<lernact-prac>]`**TODO:** ??
+3. `[<lernact-prac>]`**TODO:** ??
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -608,13 +618,36 @@ classes: encapsulation of data and functions
 #### 1. Study
 [[toc](#table-of-contents)]
 
-**TODO:** `this`
+`[<lernact-rd>]`**TODO:** objects are independent entities, with their own lifecycle...   
+**TODO:** A glimpse at memory storage: object data vs methods...   
+**TODO:** More on `this`  
+
+**TODO:** Argument pass by reference...
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+1. `[<lernact-prac>]`**TODO:** Program that spawns many sprites, doing different things...  
+2. `[<lernact-prac>]`**TODO:** Program that spawns many 3-point sprites, doing different things...  
+3. `[<lernact-prac>]`**TODO:** Program showcasing the lifecycle of 3-point sprites, blinking at different frequencies...  
+
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+
+1. Add your program from 10.2.1 with filename `microbit-program-10-2-1.js`.  
+2. Add your program from 10.2.2 with filename `microbit-program-10-2-2.js`.  
+3. Add your program from 10.2.3 with filename `microbit-program-10-2-3.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 10.2.1.  
+2. Link to a demo video for your program from 10.2.1.  
+3. Link to your program from 10.2.2.  
+4. Link to a demo video for your program from 10.2.2.  
+5. Link to your program from 10.2.3.  
+6. Link to a demo video for your program from 10.2.3.
 
 
 ### Step 11: Inheritance with classes
@@ -623,8 +656,12 @@ classes: encapsulation of data and functions
 #### 1. Study
 [[toc](#table-of-contents)]
 
+`[<lernact-rd>]`**TODO:** Limited ability to change the behavior of the `game.LedSprite()` => Inheritance
+
 #### 2. Apply
 [[toc](#table-of-contents)]
+
+**TODO:** Steps toward the target program...  
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -648,14 +685,19 @@ Assembly-level execution:
   - function calls  
   - object methods  
   
-`[<lernact-ans>]`**TODO:** questions on 
+`[<lernact-ans>]`**TODO:** questions on how various cases of code will actually be executed (picking from the above scenarios)...  
+`[<lernact-ans>]`**TODO:** multiple `forever` loops (read [Reactive](https://makecode.microbit.org/device/reactive)...    
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-disc>]`**[Optional challenge]** 
+1. `[<lernact-disc>]`**[Optional full-stack challenge, max 10 step points]** We have shown how all of our familar programming language constructs actually execute on the processor, except one, namely handling external events like `input.onButtonPressed()`. Using sketches, code snippets, documentation references, and original narrative, show how the processor handles external events. Consider using the following resources:  
+   1. [The micro:bit - a reactive system](https://makecode.microbit.org/device/reactive)
+   2. **TODO:** Resource links  
 
 #### 3. Present
 [[toc](#table-of-contents)]
+
+
 
   
