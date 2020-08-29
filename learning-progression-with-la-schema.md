@@ -408,13 +408,13 @@ In the [Lab Notebook](README.md):
 
 `[<lernact-rd>]`**TODO:** what are operators
 **TODO:** assignment vs equality
-**TODO:** comparison
+**TODO:** relational
 **TODO:** arithmetic
 **TODO:** overloading for strings!!!
 **TODO:** binary and unary
-**TODO:** precedence
+**TODO:** precedence: when not sure, enclose in parentheses `()`
 
-**TODO:** a look at the documentation, operators vs functions
+**TODO:** a look at the documentation; operators vs functions
 
 
 **TODO:** Switch order with [expressions](#step-6-expressions)?  
@@ -424,7 +424,7 @@ In the [Lab Notebook](README.md):
 
 1. `[<lernact-prac>]`**TODO:** string concat...   
 2. `[<lernact-prac>]`**TODO:** string as array...   
-3. `[<lernact-prac>]`**TODO:** ???   
+3. `[<lernact-prac>]`**TODO:** `in`...   
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -495,7 +495,7 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** logical operator
+`[<lernact-rd>]`**TODO:** logical operators `&&` and `||`  
 **TODO:** Boolean algebra
 **TODO:** composite conditions
 
@@ -604,12 +604,27 @@ In the [Lab Notebook](README.md):
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** class point with brightness (3-dimensional point) with small program...  
-2. `[<lernact-prac>]`**TODO:** ??
-3. `[<lernact-prac>]`**TODO:** ??
+1. `[<lernact-prac>]`**TODO:** class `BrightPoint` with brightness (3-dimensional point) with small program...  
+2. `[<lernact-prac>]`**TODO:** class `RandomSquare` with random side (1, 2, 3) and appearing at random places in the matrix...  
+3. `[<lernact-prac>]`**TODO:** class `Slytherin`, a snake with length, moving slowly from left to right or right to left, buttons up and down by one...  
 
 #### 3. Present
 [[toc](#table-of-contents)]
+
+In the [programs](programs) directory:
+
+1. Add your program from 9.2.1 with filename `microbit-program-9-2-1.js`.  
+2. Add your program from 9.2.2 with filename `microbit-program-9-2-2.js`.  
+3. Add your program from 9.2.3 with filename `microbit-program-9-2-3.js`.
+
+In the [Lab Notebook](README.md):
+
+1. Link to your program from 9.2.1.  
+2. Link to a demo video for your program from 9.2.1.  
+3. Link to your program from 9.2.2.  
+4. Link to a demo video for your program from 9.2.2.  
+5. Link to your program from 9.2.3.  
+6. Link to a demo video for your program from 9.2.3.
 
 
 ### Step 10: The separate lives of objects
@@ -622,7 +637,7 @@ In the [Lab Notebook](README.md):
 **TODO:** A glimpse at memory storage: object data vs methods...   
 **TODO:** More on `this`  
 
-**TODO:** Argument pass by reference...
+**TODO:** Argument pass by reference(?)...
 
 #### 2. Apply
 [[toc](#table-of-contents)]
@@ -675,7 +690,7 @@ In this step, we'll build a `HaloSprite` class that is almost exactly like the b
 
 1. `[<lernact-prac>]`**TODO:** Base program...  
 2. `[<lernact-prac>]`**TODO:** Program to plot and unplot a halo around a certain position, toggled by button B...  
-3. `[<lernact-prac>]`**TODO:** `HaloSprite`
+3. `[<lernact-prac>]`**TODO:** Putting it all together in `HaloSprite`...  
 
 #### 3. Present
 [[toc](#table-of-contents)]
