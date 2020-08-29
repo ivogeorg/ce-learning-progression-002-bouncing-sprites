@@ -55,6 +55,7 @@ Table of Contents
       * [1\. Study](#1-study-11)
       * [2\. Apply](#2-apply-11)
       * [3\. Present](#3-present-11)
+  * [References and Resources](#references-and-resources)
 
 
 ## Learning Progression 002: Bouncing Sprites
@@ -414,7 +415,7 @@ In the [Lab Notebook](README.md):
 **TODO:** binary and unary
 **TODO:** precedence: when not sure, enclose in parentheses `()`
 
-**TODO:** a look at the documentation; operators vs functions
+**TODO:** a look at the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference); operators vs functions (?)
 
 
 **TODO:** Switch order with [expressions](#step-6-expressions)?  
@@ -740,5 +741,7 @@ Assembly-level execution:
 [[toc](#table-of-contents)]
 
 
+## References and Resources
 
-  
+1. [JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript).  
+2. 
