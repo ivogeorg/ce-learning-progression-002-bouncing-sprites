@@ -304,9 +304,9 @@ In the [Lab Notebook](README.md):
 
 In the [programs](programs) directory:
 
-1. Add your program from 3.2.1 with filename `microbit-program-2-2-1.js`.  
-2. Add your program from 3.2.2 with filename `microbit-program-2-2-2.js`.  
-3. Add your program from 3.2.3 with filename `microbit-program-2-2-3.js`.
+1. Add your program from 3.2.1 with filename `microbit-program-3-2-1.js`.  
+2. Add your program from 3.2.2 with filename `microbit-program-3-2-2.js`.  
+3. Add your program from 3.2.3 with filename `microbit-program-3-2-3.js`.
 
 In the [Lab Notebook](README.md):
 
