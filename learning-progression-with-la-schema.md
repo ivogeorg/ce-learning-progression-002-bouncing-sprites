@@ -70,6 +70,8 @@ This progression continues to introduce new programming language components, rev
 
 `[<lernact-rd>]`We saw that the `while` loop is very useful for repeating behavior multiple times without having to duplicate code. But what if we wanted to repeat a behavior _exactly_ some number of times? We'll need to use a `[<cept>]`_variable_. Here's how we would go about doing this:
 ```javascript
+// Example 1.1.1
+
 const MAX_ITER : number = 10  // the number of iterations
 let i : number = 0            // a variable to keep track of how many iterations we have done so far
 
@@ -86,19 +88,25 @@ Several things to notice here:
 1. We need to delimit the number of iterations, in this case 10, which is a `[<cept>]`_constant_.  
 2. We need to keep track of how many iterations we have done so far, which is a variable, incremented each time we complete a pass through the code block.  
 3. In computing, we almost always start `[<cept>]`_counting up_ from 0 and _counting down_ to 0. There are good reasons for that:  
-   1. **TODO** 1 bit vs 2 bits, always 1 bit more to represent the same number of numbers! 
-   2. **TODO** compare to zero very efficient
-   3. **TODO** convention to avoid the _off-by-one_ error  
+   1. **Storage efficiency.** If we start at 0, we can represent 2 numbers with 1 bit, 0 and 1. If we started at 1, we would need 2 bits to represent the second number, which is 2<sub>10</sub> and 11<sub>2</sub>. By induction, we can represent 2<sup>n</sup><sub>10</sub> different `[<cept>]`_unsigned binary integers_ with n-1 bits, if we started at 0. Unsigned binary integers are just the `[<cept>]`_natural numbers_ (aka whole numbers) <img src="https://render.githubusercontent.com/render/math?math=N = {0, 1, 2, 3, ...}">.   
+   2. **Computational efficiency.** Comparison to zero can be done very quickly and efficiently in `[<cept>]`_combinatorial logic_. More on combinatorial logic in a later progression.  
+   3. **Convention.** It pays to follow the convention, for example, to avoid the `[<cept>]`_off-by-one_ error, usually to do with [arrays](#step-3-arrays-are-the-best-use-for-loops).     
 4. It is a widely adopted practice to give constants names in `ALL_CAPS`.  
 
 `[<lernact-ans>]`**Question 1.1.1:** Enumerate the values of the `[<cept>]`_loop variable_ `i` is the block of the `for` loop executed.    
 `[<lernact-ans>]`**Question 1.1.2:** What is the value of the loop variable _after_ the termination of the loop? _Hint: Skim the reference section on [block-scoping](https://makecode.microbit.org/javascript/variables) of variables._  
+`[<lernact-ans>]`**Question 1.1.3:** Enumerate the different unsigned binary integers you can represent with 4 bits?  
 
-**TODO** pattern _zero-start-and-less-than-target-count_
+What we saw in Example 1.1.1 is one of the most widely used `[<cept>]`_programming patterns_:
+1. Set the maximum number of iterations. Call it, say `I`. That may or may not be a constant.  
+2. Start the loop variable `i` at zero.  
+3. Increment the loop variable until it reaches `I - 1`, which is equivalent to `i < I`.  
    
 One thing that is deficient in controlling the number of iterations of a `while` loop like the example above is that there are bits and pieces of the necessary code all over the place. This is why programming languages almost universally provide the equivalent but much cleaner alternative syntax of the `for` loop. Let's see how we can use it to rewrite the code above and make it much cleaner:
 
 ```javascript
+// Example 1.1.2
+
 const MAX_ITER : number = 10
 
 for (let i = 0; i < MAX_ITER; i ++) {    // the loop variable is handled automatically for us
@@ -108,8 +116,20 @@ for (let i = 0; i < MAX_ITER; i ++) {    // the loop variable is handled automat
     basic.pause(100)
 }
 ```
-**TODO** Explain `i ++`...
-**TODO** Using the loop variable in the block...
+The `++` in `i ++` is the `[<cept>]`_unary operator_ for `[<cept>]`_increment_. `i ++` is exactly equivalent to `i = i + 1`, and, in fact, this is a perfectly valid expression to use instead.  
+
+The loop variable `i` takes a different value each time through the loop block, so it can be used:
+```javascript
+// Example 1.1.3
+
+const MAX_ITER : number = 10
+
+for (let i = 0; i < MAX_ITER; i ++) {         // the loop variable is handled automatically for us
+    basic.showIcon(IconNames.Heart, 100 * i)  // using the loop variable to vary the icon interval
+    basic.clearScreen()
+    basic.pause(100)
+}
+```
 
 The [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loop is extremely versatile. Let's take apart its `[<cept>]`_syntax_:
 ```
@@ -122,17 +142,11 @@ The `[<cept>]`_square brackets_ `[]` indicate an _optional_ element. All three `
 [[toc](#table-of-contents)]
 
 1. `[<lernact-prac>]`Write a program that shows a heart icon for odd numbers and pauses for 100 ms for even numbers in a `for` loop from 0 to 10 (not inclusive). _Hint: You will need to use the loop variable of the `for` loop to check for odd and even numbers and have an `if...else` conditional statement in the block of the loop._  
-2. `[<lernact-prac>]`**TODO** The following program:
-```javascript
-basic.forever(function () {
-    for (let i=0; i<=4; i++) {
-        led.plot(i, i)	
-        basic.pause(50)
-        basic.clearScreen()
-    }
-})
-```
-with [video](https://msudenver.yuja.com/Dashboard/Permalink?authCode=754064295&b=1599792&linkType=video).  
+2. `[<lernact-prac>]`Write a program shown executing on the micro:bit in the this [video](https://msudenver.yuja.com/Dashboard/Permalink?authCode=754064295&b=1599792&linkType=video). It may look quite differnt from the examples, but it's very similar. Some hints:
+   1. Use a `for` loop, of course.  
+   2. To figure out what values the loop variable should take, realize that the micro:bit LED matrix has coordinates y = [0, 4] vertically from top to bottom and x = [0, 4] from left to right. So, the `[<cept>]`_origin_ (0, 0) is in the top-left corner.  
+   3. Use the `led.plot()` function, utilizing the loop variable `i`. Note that you are plotting the `[<cept>]`_diagonal_.  
+   4. Use `pause()` and `clearScreen`.  
 3. `[<lernact-prac>]`Write a program that shows on the micro:bit 21 numbers, one after the other, starting at zero and increasing in _magnitude_, with the _even_ numbers in the interval [0, 20] are _positive_ and the _odd_ numbers in the same interval are _negative_. _Hint: Consider using a `for` loop with the `[<cept>]`_less-than-or-equal_ operator `<=` in the condition expression._  
 
 
@@ -145,12 +159,15 @@ In the [programs](programs) directory:
 3. Add your program from 1.2.3 with filename `microbit-program-1-2-3.js`.  
 
 In the [Lab Notebook](README.md):
-1. Link to the program from 1.2.1.  
-2. Link to a demo video showing the execution of the program from 1.2.1.  
-3. Link to the program from 1.2.2.  
-4. Link to a demo video showing the execution of the program from 1.2.2.  
-5. Link to the program from 1.2.3.  
-6. Link to a demo video showing the execution of the program from 1.2.3.  
+1. Answer question 1.1.1.  
+2. Answer question 1.1.2.  
+3. Answer question 1.1.3.  
+4. Link to the program from 1.2.1.  
+5. Link to a demo video showing the execution of the program from 1.2.1.  
+6. Link to the program from 1.2.2.  
+7. Link to a demo video showing the execution of the program from 1.2.2.  
+8. Link to the program from 1.2.3.  
+9. Link to a demo video showing the execution of the program from 1.2.3.  
 
 
 ### Step 2: Breaking out of loops with `break`
