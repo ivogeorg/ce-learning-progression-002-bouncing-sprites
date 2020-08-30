@@ -178,7 +178,8 @@ In the [Lab Notebook](README.md):
 
 `[<lernact-rd>]`Being so useful in running the same code muliple times, the `while` and `for` loops are ubiquitous in computer programs. This is why computer languages have keywords for them. Just as often as one needs a loop, one is likely to need a way to break out it. There's a keyword for that, too, namely `break`:
 ```javascript
-// Example 2.1
+// Example 2.1.1
+
 let stop : boolean = false
 let isHeart : boolean = true
 
@@ -198,13 +199,17 @@ while (true) {
         break
 }
 ```
-**TODO:** Explain all the new syntax.
+This example might look very foreign but only the `break` is new. Let's explain the syntax:
+1. The event handlers for the button-press events are called `[<cept>]`_arrow functions_. This is just a shorthand for anonymous functions without arguments. This is essentially what is known as _syntactic sugar_: alternative but fully equivalent syntax adopted to save typing time. The reference has a nice short article on [functions](https://makecode.microbit.org/javascript/functions).  
+2. The event handlers are each on one line instead of an extended block, but they are still in the block-delimiting curly braces `{}`.  
+3. The "blocks" of the `if` statement are missing the curly braces `{}`, but this is okay as we are only executing one line of code.  This includes the `break` statement, which is semantically self-sufficient.  
 
 In this example, when the Boolean `stop` becomes true upon the press of button B, the conditional at the bottom of the `while` loop block will be executed and program execution will jump out of the loop and never reenter. This will effectively stop the program as there is no more code left to execute after the `while` loop. This is a very simple and a bit contrived example, but the [`break`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break) keyword enables the writing of very complex program logic. 
 
 `[<lernact-rd>]`Loops can be `[<cept>]`_nested_ (e.g. a `for` loop inside a `for` loop, or a `for` loop inside a `while` loop) any which way to achieve more complex but regular behavior. For example, the following code lights up the LEDs of the micro:bit one column at a time:
 ```javascript
-// Example 2.2
+// Example 2.1.1
+
 let on : boolean = true
 
 basic.forever(function () {
@@ -222,7 +227,8 @@ basic.forever(function () {
 ```
 It is important to note that a `break` only exits the _innermost_ loop, and any outer loops will continue to execute, as shown in this example:
 ```javascript
-// Example 2.3
+// Example 2.1.3
+
 let on : boolean = true
 let halfWay : boolean = false
 
@@ -283,7 +289,7 @@ In the [Lab Notebook](README.md):
 
 `[<lernact-rd>]`**TODO:** Data types: primitive vs composite
 ```javascript
-// Example 3.1
+// Example 3.1.1
 
 // TOOD primitive data types
 ```
