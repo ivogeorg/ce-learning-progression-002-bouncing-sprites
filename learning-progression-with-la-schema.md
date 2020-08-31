@@ -449,8 +449,6 @@ The second variety gives us the option of having more than 2 branches at the sam
 
 let heading : number = 50    // degrees out of 360
 
-0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5, 360
-
 if (heading >= 0 && heading < 22.5 || heading >= 337.5 && heading < 360) {
     basic.showArrow(ArrowNames.North)
 } else if (heading >= 22.5 && heading < 67.5) {
@@ -624,18 +622,86 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** what are operators
-**TODO:** assignment vs equality
-**TODO:** relational
-**TODO:** arithmetic
-**TODO:** overloading for strings!!!
-**TODO:** binary and unary
-**TODO:** precedence: when not sure, enclose in parentheses `()`
+`[<lernact-rd>]`We have seen manu `[<cept>]`_operators_ so far. In programming languages and mathematics, operators are symbols which stand for specific _actions_ the computer to make. These can be mathematical functions (like the arithmetic functions) but don't have to be. For example, the dot, or `[<cept>]`_dereferencing_, operator `.` serves to select, for example, a specific sub-entity out of a package, variable, or type. Operators are usually a single character, but they don't have to be. For example, the increment operator `++` and the corresponding decrement operator `--` are two-character strings. We'll call out several familiar operators to strengthen the awareness about their usage:
 
-**TODO:** a look at the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference); operators vs functions (?)
+**Arithmetic.** The `+`, `-`, `*`, and `/` operators for addition, subtraction, multiplication, and division, are the same as familar to everyone. The double-star `**` stands for the `[<cept>]`_power_ operator. For example, `10**2` equals `100`. All of these operators are `[<cept>]`_binary_, which here means that they have two `[<cept>]`_operands_. For example, in the expression `x + y`, the variables `x` and `y` are called operands. They are what the operator operates on. However, the increment `++` and decrement `--` operators are `[<cept>]`_unary_, as we have see in the expression `i ++` for the loop variable `i`. The `+` and `-` also have a unary intepretation when we refer to positive and negative numbers like `+2.01` and `-3.14`. While the `+` is the default and can be omitted, the `-` cannot!  
 
+**Concatenation.** The `+` operator is `[<cept>]`_overloaded_ (meaning re-used with a special meaning for a particular data type other than numeric) to represent `[<cept>]`_concatenation_ of strings. For example:
+```javascript
+// Example 5.1.1
 
-**TODO:** Switch order with [expressions](#step-6-expressions)?  
+basic.showString("Hellow, " + "world!")     // which is equivalent to the next line
+basic.showString("Hellow, world!")
+```
+and
+```javascript
+// Example 5.1.2
+
+let name : string = "Danny"
+
+basic.showString("Hellow, " + name + "!")     // which is equivalent to the next line
+basic.showString("Hellow, Danny!")
+```
+
+**Assignment.** The assignment operator `=` takes the value of the expression on its right and writes it to the variable on its left, as in `i = 10` and, when it is combined with a variable declaration, `let i = 0`. Both variables and constants can be assigned, though variables can be re-assigned many times, while constants can be assigned only once, usually when they are declared.
+
+**Equality.** The equality operator `==` compares the _values_ of the expressions or variables on both sides for equality. They are most often used in _conditional_ statements, for example in `if (icon == IconNames.Heart) { ... }`. A condition like `icon == IconNames.Heart` yields are true-of-false value. Think of conditions as asking a _yes-or-no question_, in this case _Is the value of the variable `icon` equal to the number represented by the name `IconNames.Heart`?_. Then, you will intuitively think of the answer as yes (`true`) or no (`false`). A side note on the use of Boolean variables in conditions: since they are already condition-valued, that is, they have the value of `true` or `false`, they do not need to be compared with `==`. For example, we have seen the `isHeart` Boolean variable used in a condition on its own, like `if (isHeart) { ... }`. Notice how its very name asks a yes-or-no question. (Of course, that depends on you, the programmer! :))  
+
+The operator which tests for **in**equality is `!=`, where `!` means "not". Note that there is no operator `!==`!
+
+**Assignment vs equality.** One of the most prevalent errors in programming is the confusion between `=` (assignment) and `==` (test for equality). Endless programmer hours have been wasted on hunting for this bug, especially because the programming languages do not forbit the usage of `=` in conditions. For example, in `if (i = 5) { ... }`, where supposedly we wanted to test if `i` equals `5`, we are actually assigning `5` to `i` and the value that is tested is the `[<cept>]`_automatically conveted_ value of the variable `i`, which is `false` if `i` happens to be equal to `0`, and `true` otherwise (that is, non-zero).
+
+**Relational.** These are the usual (partial) inequality operators `<` (less than), `>` (more than), `<=` (less than or equal), and `>=` (more than or equal), which can most often be found in condition expressions, like `x < 5`, `y > z`, `i <= MAX_ITERATIONS`, etc. These also yield true-or-false values. Note that the expressions are read and interpreted **from left to right**. Also, note that there are no operators `=<` or `=>`!   
+
+**Precedence.** `[<cept>]`_Operator precedence_ is a set of rules to resolve any (possibly ambiguous at first glance) expression involving more than one operator. For example, in the expression `i**2 + 6`, `i` will be first raised to power of `2` and only then `6` will be added to the result. [Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) eliminates all ambiguity, but that doesn't mean that the expression the programmer wrote will be evaluated the way the programmer intended (unless they are fully knowledgeable about the `[<cept>]`_order of precedence_). So, whenever you are in doubt, use parentheses `()` around sub-expressions. For example, the parentheses in `(a * b) + c` are redundant, but give you extra certainty about the result.
+
+**Logical.** You have already seen all the logical operators:
+1. Operator `!` (logical NOT), when flipping the Boolean `isHeart`.  
+2. Operator `&&` (logical AND) in the compass `if...else` cascade example.  
+2. Operator `||` (logical OR) in the compass `if...else` cascade example.  
+
+These operators represent `[<cept>]`_logical functions_. Because we are referring to Boolean logic here, they are also known as Boolean functions. As a reminder, Boolean logic is 2-valued, and the values are represented by either `0` and `1` or, correpsondingly, `false` and `true`.
+
+The logical operators are used to link together condition expressions into _composite_ condition expressions. Back in the compass example, we used `&&` and `||` to define the interval for each world-direction arrow (N, NE, E, SE, S, SW, W, and NW):
+```javascript
+// Example 5.1.3
+
+if (heading >= 0 && heading < 22.5 || heading >= 337.5 && heading < 360) {
+    basic.showArrow(ArrowNames.North)
+} else if (heading >= 22.5 && heading < 67.5) {
+    basic.showArrow(ArrowNames.NorthEast)
+
+// more of the cascade here    
+
+} else {
+    basic.showArrow(ArrowNames.NorthWest)
+}
+```
+Note two things:
+1. NOT is `[<cept>]`_right-associative_, which means it attaches to the expression or variable **on its right**. We saw this in when flipping the Boolean `isHeart = ! isHeart`.   
+2. The precedence of these operators, from higher to lower, is NOT -> AND -> OR. This means, for example that we didn't have to use parentheses around the `&&` expressions in the expression `heading >= 0 && heading < 22.5 || heading >= 337.5 && heading < 360`.  
+
+The Boolean functions AND, OR, and NOT, fundamental to computing and used at every level, from high-level programming to `[<cept>]`_logic gates_, can best be expressed with tables, called `[<cept>]`_truth tables_, as follows:
+Expression 1 (A) | Expression 2 (B) | Composite expression (A AND B)
+--- | --- | ---
+false | false | false
+false | true | false
+true | false | false
+true | true | true
+
+A | B | A OR B
+--- | --- | ---
+false | false | false
+false | true | true
+true | false | true
+true | true | true
+
+A | NOT A
+--- | ---
+true | false
+false | true
+
+So, AND requires both expressions to be true to turn up true, OR reqiures at least one expression to be true to turn up true, and NOT flips the value.   
 
 #### 2. Apply
 [[toc](#table-of-contents)]
