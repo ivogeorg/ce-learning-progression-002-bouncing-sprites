@@ -328,11 +328,11 @@ In memory, arrays are arranged with all the elements `[<cept>]`_contiguous_, one
 // Example 3.1.4
 
 |-------------|
-|  000000000  |           // 0 in 8-bit binary
+|  000000000  |           // element at index 0 has value 0 in 8-bit binary
 |-------------|
-|  000000001  |           // 1 in 8-bit binary
+|  000000001  |           // element at index 1 has value 1 in 8-bit binary
 |-------------|
-|  000000020  |           // 2 in 8-bit binary
+|  000000010  |           // element at index 2 has value 2 in 8-bit binary
 |-------------|
 ```
 This allows for array elements to be read and written based on their `[<cept>]` index. Let's see how:
