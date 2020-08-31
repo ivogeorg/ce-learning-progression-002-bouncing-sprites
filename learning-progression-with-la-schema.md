@@ -950,7 +950,7 @@ Assembly-level execution:
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-disc>]`**[Optional full-stack challenge, max 10 step points]** We have shown how all of our familar programming language constructs actually execute on the processor, except one, namely handling external events like `input.onButtonPressed()`. Using sketches, code snippets, documentation references, and original narrative, show how the processor handles external events. Consider using the following resources:  
+1. `[<lernact-disc>]`**[Optional challenge, max 10 extra step points]** We have shown how all of our familar programming language constructs actually execute on the processor, except one, namely handling external events like `input.onButtonPressed()`. Using sketches, code snippets, documentation references, and original narrative, show how the processor handles external events. Consider using the following resources:  
    1. [The micro:bit - a reactive system](https://makecode.microbit.org/device/reactive)
    2. **TODO:** Resource links  
 
