@@ -434,56 +434,148 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`Branching upon conditions is one of the most powerful features of programming languages. The basic `if...else` statement that we encountered earlier allows a `[<cept>]`_two-way branch_ in the execution of a program's code. Here we will introduce some further abilities of the statement. The first one, which we already saw in a previous section, is the `[<cept>]`_conditional one-way branch_:
+`[<lernact-rd>]`Branching upon conditions is one of the most powerful features of programming languages. The basic `if...else` statement that we encountered earlier allows a `[<cept>]`_two-way branch_ in the execution of a program's code. Here we will introduce some further abilities of the statement. The first one, which we already saw in a previous step, is the `[<cept>]`_conditional one-way branch_:
 ```javascript
-// Example 4.1
+// Example 4.1.1
 
-// TODO: if without else
+if (!isHeart)
+    basic.showArrow(4)
 ```
 This is essentially an `if` statement without an `else` `[<cept>]`_clause_: if the condition is false, no branching happens.
 
 The second variety gives us the option of having more than 2 branches at the same point, by extending extending the `else` clause with its own `if` statements:
 ```javascript
-// Example 4.2
+// Example 4.1.2
 
-// TODO: if...else cascade
+let heading : number = 50    // degrees out of 360
+
+0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5, 360
+
+if (heading >= 0 && heading < 22.5 || heading >= 337.5 && heading < 360) {
+    basic.showArrow(ArrowNames.North)
+} else if (heading >= 22.5 && heading < 67.5) {
+    basic.showArrow(ArrowNames.NorthEast)
+} else if (heading >= 67.5 && heading < 112.5) {
+    basic.showArrow(ArrowNames.East)
+} else if (heading >= 112.5 && heading < 157.5) {
+    basic.showArrow(ArrowNames.SouthEast)
+} else if (heading >= 157.5 && heading < 202.5) {
+    basic.showArrow(ArrowNames.South)
+} else if (heading >= 202.5 && heading < 247.5) {
+    basic.showArrow(ArrowNames.SouthWest)
+} else if (heading >= 247.5 && heading < 292.5) {
+    basic.showArrow(ArrowNames.West)
+} else {
+    basic.showArrow(ArrowNames.NorthWest)
+}
 ```
-This is called an `if...else` cascade. The most important thing to notice is that, as we descend down the cascade, we test for _increasingly narrow_ cases, and we should write the conditions accordingly. Let's illustrate with an example:
+This is called an `if...else` cascade. The most important thing to notice is that, as we descend down the cascade, all the conditions that weren't true accumulate and so there is an increasingly narrow region remaining for the rest of the cases. Sometimes, if we are not paying attention to this narrowing region, we can write a cascade in a way that some of the conditions _will never be true_. Let's illustrate with an example:
 ```javascript
-// Example 4.3
+// Example 4.1.3
 
-// TODO: test for even and then test for 40
+let x : number
+
+if (x % 2 == 0) {     // if x is even
+   // do something
+} else if (x == 40) { // if x is equal to 40
+   // do another thing
+} else {
+   // yet another thing
+}
 ```
-Obviously, if the number is not even, it cannot be 40. Graphically, an `if...else` cascade can be illustrated as a `[<cept>]`_decision tree_. 
-**TODO:** <img src="" alt="" width="" />
-In general, the cases one level down the cascade should belong to the branch that was taken in the level above them.
-
-Looking at the syntax of the [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement in the JavaScript documentation, we see a generalization of all the cases we have seen:
-```
-// Example 4.4
-
-// TODO: if...else syntax
-```
-
-`[<lernact-rd>]`We have seen that `if...else` cascades, for all their power, can be quite error-prone and hard to read (and, so, fix if erroneous). There is another statement that can be used instead, namely the `switch` statement. Here's the cascade from Example 4.2, written as a `switch` statement:
+Obviously, if the number is not even, it cannot be 40. If we wanted to test for equality to 40, we should have either nested the test under the even numbers, like:
 ```javascript
-// Example 4.5
+// Example 4.1.4
 
-// TODO: switch
+let x : number
+
+if (x % 2 == 0) {     // if x is even
+   if (x == 40) {     // if x is equal to 40
+       // do something very specific
+   } else {
+       // do another thing for all other even numbers
+   }
+} else {
+   // do something for the odd numbers
+}
+```
+or should have started with the specific test, like:
+```javascript
+// Example 4.1.5
+
+let x : number
+
+if (x == 40) {                     // if x is equal to 40
+   // do something very specific
+} else if (x % 2 == 0) {           // if x is even (but not 40)
+   // do another thing for all other even numbers
+} else {                           // x is odd
+   // do something for the odd numbers
+}
+```
+In general, the cases one level down the cascade should be further specifications of the case that was taken in the branch on the level above.
+
+Looking at the syntax of the [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement in the JavaScript documentation, we see all the cases we have seen so far.
+
+`[<lernact-rd>]`We have seen that `if...else` cascades, for all their power, can be quite error-prone and hard to read (and, so, fix if erroneous). There is another statement that can be used instead, namely the `switch` statement. Here is an example:
+```javascript
+// Example 4.1.6
+
+let speedLimit : number = 65
+let speed : number 
+
+switch (speedLimit) {
+    case 25:
+        speed = 30
+        break
+    case 35:
+        speed = 45
+        break
+    case 45:
+        speed = 60
+        break
+    case 55:
+        speed = 75
+        break
+    default:
+        speed = 85
+}
+
+basic.forever(function () {
+    basic.showNumber(speed)  
+})
 ```
 Notice two important points:
-1. Each `case` should have a `break` unless we intentionally want to _fall through_ and do the same thing for more than one case.  
+1. Each `case` should have a `break` to jump out of the `switch` statement, unless we intentionally want to _fall through_ and do the same thing for more than one case.  
 2. The `default` clause is a `[<cept>]`_catch-all_, just like the final `else` in an `if...else` cascade.   
 
-Once again, let's take a look at syntax for the `switch` statement in the documentation:
+Let's take a look at syntax for the `switch` statement:
 ```
-// Example 4.6
+// Example 4.1.7
 
-// TODO: switch syntax
+switch (expression) {
+  case value1:
+    //Statements executed when the
+    //result of expression matches value1
+    [break;]
+  case value2:
+    //Statements executed when the
+    //result of expression matches value2
+    [break;]
+  ...
+  case valueN:
+    //Statements executed when the
+    //result of expression matches valueN
+    [break;]
+  [default:
+    //Statements executed when none of
+    //the values match the value of the expression
+    [break;]]
+}
 ```
-Notice how all but the first `case` clauses as well as the `default` clause are all _optional_.
+Notice in the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) how all `case` clauses as well as the `default` clause are all _optional_.
 
-**TODO:** Finally, `switch` statements are best for numerical equalities and `if...else` cascades are best for `[<cept>]`_intervals_ and `[<cept>]`_inequalities_...  
+In general, `switch` statements are best for numerical equalities and `if...else` cascades are best for `[<cept>]`_intervals_ and `[<cept>]`_inequalities_, as we saw in Example 4.1.2.  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
