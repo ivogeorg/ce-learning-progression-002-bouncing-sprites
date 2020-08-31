@@ -622,7 +622,7 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`We have seen manu `[<cept>]`_operators_ so far. In programming languages and mathematics, operators are symbols which stand for specific _actions_ the computer to make. These can be mathematical functions (like the arithmetic functions) but don't have to be. For example, the dot, or `[<cept>]`_dereferencing_, operator `.` serves to select, for example, a specific sub-entity out of a package, variable, or type. Operators are usually a single character, but they don't have to be. For example, the increment operator `++` and the corresponding decrement operator `--` are two-character strings. We'll call out several familiar operators to strengthen the awareness about their usage:
+`[<lernact-rd>]`We have seen manu `[<cept>]`_operators_ so far. In programming languages and mathematics, operators are symbols which stand for specific _actions_ the computer to make. These can be mathematical functions (like the arithmetic functions) but don't have to be. For example, the dot, or `[<cept>]`_dereferencing_ or `[<cept>]`_member access_, operator `.` serves to select, for example, a specific sub-entity (that is, member) in a package, variable, or type. Operators are usually a single character, but they don't have to be. For example, the increment operator `++` and the corresponding decrement operator `--` are two-character strings. We'll call out several familiar operators to strengthen the awareness about their usage:
 
 **Arithmetic.** The `+`, `-`, `*`, and `/` operators for addition, subtraction, multiplication, and division, are the same as familar to everyone. The double-star `**` stands for the `[<cept>]`_power_ operator. For example, `10**2` equals `100`. All of these operators are `[<cept>]`_binary_, which here means that they have two `[<cept>]`_operands_. For example, in the expression `x + y`, the variables `x` and `y` are called operands. They are what the operator operates on. However, the increment `++` and decrement `--` operators are `[<cept>]`_unary_, as we have see in the expression `i ++` for the loop variable `i`. The `+` and `-` also have a unary intepretation when we refer to positive and negative numbers like `+2.01` and `-3.14`. While the `+` is the default and can be omitted, the `-` cannot!  
 
@@ -679,7 +679,7 @@ if (heading >= 0 && heading < 22.5 || heading >= 337.5 && heading < 360) {
 ```
 Note two things:
 1. NOT is `[<cept>]`_right-associative_, which means it attaches to the expression or variable **on its right**. We saw this in when flipping the Boolean `isHeart = ! isHeart`.   
-2. The precedence of these operators, from higher to lower, is NOT -> AND -> OR. This means, for example that we didn't have to use parentheses around the `&&` expressions in the expression `heading >= 0 && heading < 22.5 || heading >= 337.5 && heading < 360`.  
+2. The precedence of these operators, from higher to lower, is NOT -> AND -> OR. This means, for example that we didn't have to use parentheses around the `&&` expressions in the expression `heading >= 0 && heading < 22.5 || heading >= 337.5 && heading < 360` to define the interval in degrees for North (`ArrowNames.North`).  
 
 The Boolean functions AND, OR, and NOT, fundamental to computing and used at every level, from high-level programming to `[<cept>]`_logic gates_, can best be expressed with tables, called `[<cept>]`_truth tables_, as follows:
 Expression 1 (A) | Expression 2 (B) | Composite expression (A AND B)
@@ -703,12 +703,32 @@ false | true
 
 So, AND requires both expressions to be true to turn up true, OR reqiures at least one expression to be true to turn up true, and NOT flips the value.   
 
+**Member selection.** The two member-selector operators we have encountered are the dot `.` and the indexing square brackes for arrays `[]`. The latter is known as the `[<cept>]`_computer member access_, because the element index is used to calculate its offset in memory relative to the first element, where the array name points. For an array, both of these operators can be used, as we have seen in `for` loops. For example:
+```javascript
+// Example 5.1.4
+
+let arr : number[] = [13, 17, 19]
+
+for (let i=0; i<arr.length; i++) {
+    basic.showString("arr" + arr[i].toString())
+}
+```
+
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** string concat...   
-2. `[<lernact-prac>]`**TODO:** string as array...   
-3. `[<lernact-prac>]`**TODO:** `in`...   
+1. `[<lernact-prac>]`Write a program that scrolls a string along the LED matrix of the micro:bit, in a `for` loop. Each time through the loop, the loop variable `i` should be concatenated to the string before its shown. Note that `+` will not work on a string and a number, like `"hello" + 6`, so `i` needs to be converted to a string `"i"` by calling its `toString()` method. Remember how we added to a variable, like `i = i + 3`; you have to do something similar with your string variable.  
+2. `[<lernact-prac>]`Write a progam that adds elements to an array, in a `for` loop. Start with the array `[1, 1, 1, 1, 2, 2, 2, 2]`. Each time through the loop, using the array function `insertAt()`, add the loop variable to the array in such a way that the result will be `[1, 1, 1, 1, 0, 1, 2, 3, 4, 5, 2, 2, 2, 2]`. Then, in another `for` loop, print the array in the following way: `"12"`, `"12"`, ..., `"05"`, `"14"`, ... . In other words, the first time through the loop, you should take the first and last elements, convert them to strings, concatenate them, and print them with `showString()`, continuing inward from both ends as the loop continues. Hints and notes:
+   1. What is the number of iterations for the first loop?  
+   2. What is the number of iterations for the second loop?  
+   3. You will need to use the `length` property on the array. Note that, if you are changing the array in the loop, the `length` value will be changing, too.   
+   4. When you want to index the elements on the right, those that are close to the end of the array, consider and run this code example:
+      ```javascript
+      // Example 5.1.5
+      
+      let arr: number[] = [1, 4, 6]
+      basic.showNumber(arr[arr.length-1])
+      ```
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -717,7 +737,6 @@ In the [programs](programs) directory:
 
 1. Add your program from 5.2.1 with filename `microbit-program-5-2-1.js`.  
 2. Add your program from 5.2.2 with filename `microbit-program-5-2-2.js`.  
-3. Add your program from 5.2.3 with filename `microbit-program-5-2-3.js`.
 
 In the [Lab Notebook](README.md):
 
@@ -725,8 +744,6 @@ In the [Lab Notebook](README.md):
 2. Link to a demo video for your program from 5.2.1.  
 3. Link to your program from 5.2.2.  
 4. Link to a demo video for your program from 5.2.2.  
-5. Link to your program from 5.2.3.  
-6. Link to a demo video for your program from 5.2.3.
 
 
 ### Step 6: Expressions
