@@ -752,7 +752,7 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`We have mentioned "expressions" many times already, but have not defined what they are. [Wikipedia](https://en.wikipedia.org/wiki/Expression_(computer_science)) provides a very compact and precise definition: _In computer science, an expression is a syntactic entity in a programming language that may be evaluated to determine its value._ So, in plain words, expressions are piece of program code which can be `[<cept>]`_evaluated_, using the syntactic rules of the language and the values of the variables and constants that appear in the expressions.
+`[<lernact-rd>]`We have mentioned "expressions" many times already, but have not defined what they are. [Wikipedia](https://en.wikipedia.org/wiki/Expression_(computer_science)) provides a very compact and precise definition: _In computer science, an expression is a syntactic entity in a programming language that may be evaluated to determine its value._ So, in plain words, expressions are piece of program code which can be `[<cept>]`_evaluated_, using the syntactic rules of the language and the values of the variables and constants that appear in the expressions. Going back to our initial definition of computers, expressions are in the heart of the data manipulation that computers do.
 
 Expressions can appear as operations on constants and variables defined by operators. They can also be single keywords. Most importantly, they are very often composite, in the sense that there is a hierarchy of evaluation that needs to be applied, based on operator precedence, before the final value can be determined. As we know, computers only work on numbers, so the value of every expression is numerical.
 
@@ -773,10 +773,16 @@ Another term that appears often when expressions are discussed is `[<cept>]`_sta
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** conditionals - equality  
-2. `[<lernact-prac>]`**TODO:** conditionals - comparisons  
-3. `[<lernact-prac>]`**TODO:** expressions in rvalues of assignments  
-4. `[<lernact-prac>]`**TODO:** expressions in arguments of functions    
+1. `[<lernact-prac>]`Write a program which:
+   1. Picks and lights two random points on the micro:bit LED matrix.  
+   2. Then, in a loop, starts generating random points one by one.  
+   3. Each generated point is compared to the line defined by the points in (1), and, if it is **below and/or to the right of the line**, it is lit up.  
+   4. Runs until the region below and/or to the right of the line is filled up.  
+2. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Write a program which:
+   1. Picks and lights two random points on the micro:bit LED matrix.  
+   2. Lights that line. Note that due to the low resolution, it will be heavily `[<cept>]`_aliased_ and crude. You will need to pick which LED positions belong to the line mathematically.  
+   3. Draws a second line which is `[<cept>]`_orthogonal_ to the first one, and most closely _bisects_ it.  
+   4. One pressing the A button, new two points are picked and the procedure is repeated.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -785,8 +791,6 @@ In the [programs](programs) directory:
 
 1. Add your program from 6.2.1 with filename `microbit-program-6-2-1.js`.  
 2. Add your program from 6.2.2 with filename `microbit-program-6-2-2.js`.  
-3. Add your program from 6.2.3 with filename `microbit-program-6-2-3.js`.
-4. Add your program from 6.2.4 with filename `microbit-program-6-2-4.js`.
 
 In the [Lab Notebook](README.md):
 
@@ -794,10 +798,6 @@ In the [Lab Notebook](README.md):
 2. Link to a demo video for your program from 6.2.1.  
 3. Link to your program from 6.2.2.  
 4. Link to a demo video for your program from 6.2.2.  
-5. Link to your program from 6.2.3.  
-6. Link to a demo video for your program from 6.2.3.
-7. Link to your program from 6.2.4.  
-8. Link to a demo video for your program from 6.2.4.
 
 
 ### Step 7: Composite conditions
