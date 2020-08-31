@@ -287,27 +287,76 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** Data types: primitive vs composite
+`[<lernact-rd>]`**TODO:** Data types divide into two main groups: `[<cept>]`_primitive_ data types have `[<cept>]`_word-storage_, which means that in memory they take up a `[<cept>]`_word of memory_, usually 16 or 32 bits, while `[<cept>]`_composite_ data types have `[<cept>]`_structure-storage_, which means that they are composed of some combination of primitive-type variables. Here are examples of primitive-type variables.  
 ```javascript
 // Example 3.1.1
 
-// TOOD primitive data types
+let i : number = 345
+let f : number = 5.602
+let b : boolean = true
 ```
 
-`[<lernact-rd>]`**TODO:** Arrays are a composite data type which is a linear sequence of elements of the same type, called the `[<cept>]`_base type_. Example...
+`[<lernact-rd>]`Arrays are a composite data type which is a linear sequence of elements of the same type, called the `[<cept>]`_base type_. The base type can be primitive or complex. Here is an example of various arrays:
 ```javascript
-// Example 3.2
+// Example 3.1.2
 
-// TOOD simple declaration and use of an array
+let iArr : number[] = [0, 1, 2]                                        // an array of integers, initialized with literal values
+let fArr : number[] = [3.14, 3.142, 3.1416, 3.14159]                   // an array of floating-point numbers, also initialized with literal values
+let bArr : number[] = [false, true, true, false]                       // an array of Booleans
+
+let sArr : string[] = ["Hellow", "world", "the", "microbit", "rocks"]  // an array of strings (words of text or sequences of characters)
+let twoDArr : number[][] = [[1, 3, 4], [3, 4, 5, 6, 7]]                // a 2-dimensional array, that is, an array of arrays (in this case of numbers)
+let iconArr : IconNames[] = [IconNames.Heart, IconNames.Butterfly]     // an array of icons (themselves an enum type)
 ```
-**TODO:** Things to notice
+So, an array is a named variable with multiple values in a specific order. The syntax of an array variable declaration is as follows:
+1. We start with the keyword `let`, followed by the variable name.  
+2. We continue with the colon `:` and the base type of the array, followed by the `[<cept>]`_square brackets_ `[]`.  
+3. In this example, we are initializing the arrays with values. For example, the integer array `iArr` has the values `0`, `1`, and `2`.  
 
-**TODO:** Sketch of memory storage for primitive types and arrays...
-**TODO:**<img src="" alt="" width="" />
+An array does not have to be initialized. We can fill them later:
+```javascript
+// Example 3.1.3
+
+let iArr : number[] = []                                              // an empty array of integers
+
+iArr.push(0)                                                          // add a value at the end of the array
+iArr.push(1)                                                          // add a value at the end of the array
+iArr.push(2)                                                          // add a value at the end of the array
+```
+In memory, arrays are arranged with all the elements `[<cept>]`_contiguous_, one "on top of" the other, as in this sketch:
+```
+// Example 3.1.4
+
+|-------------|
+|  000000000  |           // 0 in 8-bit binary
+|-------------|
+|  000000001  |           // 1 in 8-bit binary
+|-------------|
+|  000000020  |           // 2 in 8-bit binary
+|-------------|
+```
+This allows for array elements to be read and written based on their index. Let's see how:
+```
+// Example 3.1.5
+
+let fArr : number[] = []
+
+fArr.push(3.14)
+fArr.push(3.142)
+fArr.push(3.1416)
+fArr.push(3.14159)
+
+let pi                 = fArr[0]        // the variable pi will have the value 3.14
+let piMoreAccurate     = fArr[1]        // the variable piMoreAccurate will have the value 3.142
+let piEvenMoreAccurate = fArr[2]
+let piVeryAccurate     = fArr[3]
+```
+There are many operations that can be done on arrays: add elements, remove elements, get the length, etc. The best thing to do is to check out the `Arrays` package of the Advanced section in the MakeCode menue, and, once you create an array with a name, say `myFirstArray`, type this name on a new line, and then a dot `.` to see all the available functions and properties.
+
 **TODO:** What are arrays good for and why are loops and [arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
  used together so often...
 ```javascript
-// Example 3.3
+// Example 3.1.4
 
 // TOOD looping through an array
 ```
