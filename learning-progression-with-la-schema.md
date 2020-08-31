@@ -208,7 +208,7 @@ In this example, when the Boolean `stop` becomes true upon the press of button B
 
 `[<lernact-rd>]`Loops can be `[<cept>]`_nested_ (e.g. a `for` loop inside a `for` loop, or a `for` loop inside a `while` loop) any which way to achieve more complex but regular behavior. For example, the following code lights up the LEDs of the micro:bit one column at a time:
 ```javascript
-// Example 2.1.1
+// Example 2.1.2
 
 let on : boolean = true
 
@@ -287,7 +287,7 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** Data types divide into two main groups: `[<cept>]`_primitive_ data types have `[<cept>]`_word-storage_, which means that in memory they take up a `[<cept>]`_word of memory_, usually 16 or 32 bits, while `[<cept>]`_composite_ data types have `[<cept>]`_structure-storage_, which means that they are composed of some combination of primitive-type variables. Here are examples of primitive-type variables.  
+`[<lernact-rd>]`Data types divide into two main groups: `[<cept>]`_primitive_ data types have `[<cept>]`_word-storage_, which means that in memory they take up a `[<cept>]`_word of memory_, usually 16 or 32 bits, while `[<cept>]`_composite_ data types have `[<cept>]`_structure-storage_, which means that they are composed of some combination of primitive-type variables. Here are examples of primitive-type variables.  
 ```javascript
 // Example 3.1.1
 
@@ -360,7 +360,7 @@ There are many operations that can be done on arrays: add elements, remove eleme
 let favoriteIcons : IconNames[] = [IconNames.Heart, IconNames.Cow, IconNames.Diamond]
 
 for (let i=0; i < favoriteIcons.length; i ++) {     // note the use of the length property
-    basic.IconShow(favoriteIcons[i])
+    basic.showIcon(favoriteIcons[i])
     basic.pause(100)
 }
 ```
@@ -384,26 +384,27 @@ Let's explain this code:
 2. The 2-dimensional array has, naturally, 2 indices. The first one (on the left) is the "outer" index, in our case, indexing the nested arrays. The second one (on the right) is the "inner" index, in our case, indexing the numbers in each nested array. That's why we have `twoDArr[x][y]`.  
 3. For the second index `y`, we need to only loop through the length of the nexted arrays (assuming they are the same length, as in our case). That's why we take the length like this `twoDArr[0].length`.  
 
-There is another way to iterate through an array, using the `forEach` function, which every array has:
+`[<lernact-rd>]`There is another way to iterate through an array, using the `forEach` function, which every array has:
 ```javascript
 // Example 3.1.8
 
 let favoriteIcons : IconNames[] = [IconNames.Heart, IconNames.Cow, IconNames.Diamond]
 
 favoriteIcons.forEach(function (value: IconNames, index: number) {
-    basic.IconShow(value)
+    basic.showIcon(value)
     basic.pause(100)
-    
 })
 ```
-You might recognize the function-as-an-argument paradigm that is so fundamental for JavaScript. Again, it is an anonymous function, called a `[<cept>]`_callback_ function, but notice that this time it has parameters `value` and `index`. For each element of the array, this function is called, the value of the element and its index are passed in as arguments to the callback. In our case, we only need the value, which will be an icon.  
+You might recognize the function-as-an-argument paradigm that is so fundamental to JavaScript. Again, it is an anonymous function, called a `[<cept>]`_callback_ function, but notice that this time it has parameters `value` and `index`. For each element of the array, this function is called, the value of the element and its index are passed in as arguments to the callback. In our case, we only need the value, which will be an icon.  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** Simple extension of example 3.3  
-2. `[<lernact-prac>]`**TODO:** Loop "backwards" with a hint on `for` starting at the "end" and decreasing with `i --`.  
-3. `[<lernact-prac>]`**TODO:** Multidimensional array for lighting up rows and columns in various orders...   
+1. `[<lernact-prac>]`Extend Example 3.1.6 to show 5 different icons and, using the loop variable `i`, show each subsequent one for a shorter period of time.  
+2. `[<lernact-prac>]`Show the icons from the previous program in reverse order in two different way:
+   1. By manipulating the loop variable `i` to count backwords. _Hint: What would be the corresponding unary decrement operator?_  
+   2. By using the arrays's `reverse()` method.  
+3. `[<lernact-prac>]`Take Example 2.1.3 and create two number arrays, `xArr` and `yArr`, where the columna and row indices are _scrambled_ (that is, not in order). Then, instead of plotting `x` and `y`, use the loop variables as indices into the two arrays.
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -411,17 +412,20 @@ You might recognize the function-as-an-argument paradigm that is so fundamental 
 In the [programs](programs) directory:
 
 1. Add your program from 3.2.1 with filename `microbit-program-3-2-1.js`.  
-2. Add your program from 3.2.2 with filename `microbit-program-3-2-2.js`.  
+2. Add your program from 3.2.2.1 with filename `microbit-program-3-2-2-1.js`.  
+2. Add your program from 3.2.2.2 with filename `microbit-program-3-2-2-2.js`.  
 3. Add your program from 3.2.3 with filename `microbit-program-3-2-3.js`.
 
 In the [Lab Notebook](README.md):
 
 1. Link to your program from 3.2.1.  
 2. Link to a demo video for your program from 3.2.1.  
-3. Link to your program from 3.2.2.  
-4. Link to a demo video for your program from 3.2.2.  
-5. Link to your program from 3.2.3.  
-6. Link to a demo video for your program from 3.2.3.
+3. Link to your program from 3.2.2.1.  
+4. Link to a demo video for your program from 3.2.2.1.  
+5. Link to your program from 3.2.2.2.  
+6. Link to a demo video for your program from 3.2.2.2.  
+7. Link to your program from 3.2.3.  
+8. Link to a demo video for your program from 3.2.3.
 
 
 ### Step 4: Beyond `if...else`
