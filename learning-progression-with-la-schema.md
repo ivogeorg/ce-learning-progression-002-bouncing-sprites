@@ -469,7 +469,7 @@ if (heading >= 0 && heading < 22.5 || heading >= 337.5 && heading < 360) {
     basic.showArrow(ArrowNames.NorthWest)
 }
 ```
-This is called an `if...else` cascade. The most important thing to notice is that, as we descend down the cascade, all the conditions that weren't true accumulate and so there is an increasingly narrow region remaining for the rest of the cases. Sometimes, if we are not paying attention to this narrowing region, we can write a cascade in a way that some of the conditions _will never be true_. Let's illustrate with an example:
+This is called an `if...else` cascade and the conditions are `[<cept>]`_composite conditions_ (more on [them](#step-7-composite-conditions) later). The most important thing to notice is that, as we descend down the cascade, all the conditions that weren't true accumulate and so there is an increasingly narrow region remaining for the rest of the cases. Sometimes, if we are not paying attention to this narrowing region, we can write a cascade in a way that some of the conditions _will never be true_. Let's illustrate with an example:
 ```javascript
 // Example 4.1.3
 
@@ -580,9 +580,21 @@ In general, `switch` statements are best for numerical equalities and `if...else
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** `enum` type names are represented as numbers under the hood. Cycle through the icons and show only "even" icons...
-2. `[<lernact-prac>]`**TODO:** cycle through the icons and show them for a time proportional to the decade of their index, rounded up to the nearest decade...  
-3. `[<lernact-prac>]`**TODO:** cycle through the icons and, using a `switch` statement show them as many times as the smallest odd divisor of their index (3 times if divisible by 3, 5 if div by 5, 2 if even, and once otherwise) and 2 if even...   
+1. `[<lernact-prac>]`The `enum` type `IconNames` contains 40 icon names. These names actually resolve to numbers. You can easily see that with these lines:
+   ```javascript
+   // Example 4.1.8
+   
+   basic.showNumber(IconNames.Heart)
+   basic.showIcon(39)
+   ```
+   So, the first one, at index 0, is `IconNames.Heart`, and the last one, at index 39, is... I have no idea :-o. Anyway, write a program that shows only _odd_ icons.  
+2. `[<lernact-prac>]`Cycle through the icons and show the ones in the index range 0-9 for 100 ms, 10-19 for 200 ms, etc., that is, for a time proportional to the decade of their index.  
+3. `[<lernact-prac>]`Cycle through the icons and, using a `switch` statement, show them as many times as the `[<cept>]`_remainder_ of their index divided by 7. The `[<cept>]`_modulo_ operator `%` will come useful. The expression `x % y` gives you the remainder of the division of `x` by `y`.      
+4. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Cycle through the icons and, using a `switch` statement, show them as many times as the smallest odd `[<cept>]`_divisor_ of their index (3 times if divisible by 3, 5 if divisible by 5 but not by 3, etc.), 2 times if the index is even, and only once if their index is `[<cept>]`_prime_. Hints and notes:
+   1. It is natural to use a `for` loop to cycle through the icons (as natural numbers).  
+   2. For the `switch` expression, consider using the `[<cept>]`_division_ operator `/` and the function `Math.floor()`.    
+   3. Think of what it means for one number to be divisible (aka exactly divisible) by another.  
+   4. The `case` statements are checked one at a time, from top to bottom, but they can be written in any order. Think of how you can arrange them cleverly to help with the solution.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -592,6 +604,7 @@ In the [programs](programs) directory:
 1. Add your program from 4.2.1 with filename `microbit-program-4-2-1.js`.  
 2. Add your program from 4.2.2 with filename `microbit-program-4-2-2.js`.  
 3. Add your program from 4.2.3 with filename `microbit-program-4-2-3.js`.
+3. Add your program from 4.2.4 with filename `microbit-program-4-2-4.js`.
 
 In the [Lab Notebook](README.md):
 
@@ -601,6 +614,8 @@ In the [Lab Notebook](README.md):
 4. Link to a demo video for your program from 4.2.2.  
 5. Link to your program from 4.2.3.  
 6. Link to a demo video for your program from 4.2.3.
+7. Link to your program from 4.2.4.  
+8. Link to a demo video for your program from 4.2.4.
 
 
 ### Step 5: Operators
