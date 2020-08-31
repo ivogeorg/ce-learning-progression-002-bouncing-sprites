@@ -296,7 +296,7 @@ let f : number = 5.602
 let b : boolean = true
 ```
 
-`[<lernact-rd>]`Arrays are a composite data type which is a linear sequence of elements of the same type, called the `[<cept>]`_base type_. The base type can be primitive or complex. Here is an example of various arrays:
+`[<lernact-rd>]`Arrays are a composite data type which is a linear sequence of elements of the **same type**, called the `[<cept>]`_base type_. The base type can be primitive or complex. Here is an example of various arrays:
 ```javascript
 // Example 3.1.2
 
@@ -335,8 +335,8 @@ In memory, arrays are arranged with all the elements `[<cept>]`_contiguous_, one
 |  000000020  |           // 2 in 8-bit binary
 |-------------|
 ```
-This allows for array elements to be read and written based on their index. Let's see how:
-```
+This allows for array elements to be read and written based on their `[<cept>]` index. Let's see how:
+```javascript
 // Example 3.1.5
 
 let fArr : number[] = []
@@ -346,23 +346,57 @@ fArr.push(3.142)
 fArr.push(3.1416)
 fArr.push(3.14159)
 
-let pi                 = fArr[0]        // the variable pi will have the value 3.14
-let piMoreAccurate     = fArr[1]        // the variable piMoreAccurate will have the value 3.142
-let piEvenMoreAccurate = fArr[2]
+let pi                 = fArr[0]        // the variable pi will have the value 3.14, taken from index 0 of the array
+let piMoreAccurate     = fArr[1]        // the variable piMoreAccurate will have the value 3.142, taken from index 1 of the array
+let piEvenMoreAccurate = fArr[2]        // etc.
 let piVeryAccurate     = fArr[3]
 ```
 There are many operations that can be done on arrays: add elements, remove elements, get the length, etc. The best thing to do is to check out the `Arrays` package of the Advanced section in the MakeCode menue, and, once you create an array with a name, say `myFirstArray`, type this name on a new line, and then a dot `.` to see all the available functions and properties.
 
-**TODO:** What are arrays good for and why are loops and [arrays](https://makecode.microbit.org/javascript/types): Best use of loops    
- used together so often...
+`[<lernact-rd>]`Loops and arrays are often used together as the loop variable can be used as the index into the array:
 ```javascript
-// Example 3.1.4
+// Example 3.1.6
 
-// TOOD looping through an array
+let favoriteIcons : IconNames[] = [IconNames.Heart, IconNames.Cow, IconNames.Diamond]
+
+for (let i=0; i < favoriteIcons.length; i ++) {     // note the use of the length property
+    basic.IconShow(favoriteIcons[i])
+    basic.pause(100)
+}
 ```
+Notice how we don't need to know how many elements there are in the array to get our loop correct, because we can use the `length` property of the array type.
 
-`[<lernact-rd>]`**TODO:** A glimpse of multidimensional arrays...
+`[<lernact-rd>]`To iterate through a 2D array, we need 2 nested `for` loops:
+```javascript
+// Example 3.1.7
 
+let twoDArr : number[][] = [[1, 3, 4], [3, 4, 5]]                 // notice that the nested arrays are all the same length
+
+for (int x=0; x < twoDArr.length; x ++) {
+    for (int y=0; y < twoDArr[0].length; y ++) {
+         basic.showNumber(twoDArr[x][y])
+         basic.pause(100)
+    }
+}
+```
+Let's explain this code:
+1. Notice the double brackets on the array declaration `[][]`. They indicate a 2-dimensional array.  
+2. The 2-dimensional array has, naturally, 2 indices. The first one (on the left) is the "outer" index, in our case, indexing the nested arrays. The second one (on the right) is the "inner" index, in our case, indexing the numbers in each nested array. That's why we have `twoDArr[x][y]`.  
+3. For the second index `y`, we need to only loop through the length of the nexted arrays (assuming they are the same length, as in our case). That's why we take the length like this `twoDArr[0].length`.  
+
+There is another way to iterate through an array, using the `forEach` function, which every array has:
+```javascript
+// Example 3.1.8
+
+let favoriteIcons : IconNames[] = [IconNames.Heart, IconNames.Cow, IconNames.Diamond]
+
+favoriteIcons.forEach(function (value: IconNames, index: number) {
+    basic.IconShow(value)
+    basic.pause(100)
+    
+})
+```
+You might recognize the function-as-an-argument paradigm that is so fundamental for JavaScript. Again, it is an anonymous function, called a `[<cept>]`_callback_ function, but notice that this time it has parameters `value` and `index`. For each element of the array, this function is called, the value of the element and its index are passed in as arguments to the callback. In our case, we only need the value, which will be an icon.  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
