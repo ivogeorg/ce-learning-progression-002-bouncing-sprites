@@ -752,13 +752,23 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** what are expressions
-**TODO:** operators & expressions
-**TODO:** expressions vs statements
+`[<lernact-rd>]`We have mentioned "expressions" many times already, but have not defined what they are. [Wikipedia](https://en.wikipedia.org/wiki/Expression_(computer_science)) provides a very compact and precise definition: _In computer science, an expression is a syntactic entity in a programming language that may be evaluated to determine its value._ So, in plain words, expressions are piece of program code which can be `[<cept>]`_evaluated_, using the syntactic rules of the language and the values of the variables and constants that appear in the expressions.
 
-**TODO:** Switch order with [operators](#step-5-operators)?  
-[JavaScript exrepssions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#Expressions_and_operators)   
-[JavaScript reference: expressions & operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)   
+Expressions can appear as operations on constants and variables defined by operators. They can also be single keywords. Most importantly, they are very often composite, in the sense that there is a hierarchy of evaluation that needs to be applied, based on operator precedence, before the final value can be determined. As we know, computers only work on numbers, so the value of every expression is numerical.
+
+Expressions can appear in many places: on the right side of assignments, on both sides of relational and equality operators, in conditions, as arguments to functions, etc.
+```javascript
+// Example 6.1.1
+
+let z = 2 * length + 4 * width                                         // height and width are variables with their own values
+
+if (z != 0 && z > 5 * (outer_dimension + 2 * inner_dimension)) {       // outer_dimension and inner_dimension are variables or constants
+    model.updateHeight(z, z + 1, 2 * z + 4, epsilon)                   // updateHeight is a function, and epsilon is a variable or constant
+}
+```
+
+Another term that appears often when expressions are discussed is `[<cept>]`_statement_. There isn't a definition of statement (in the computer programming sense of the word) as crips as that for expressions, but a statement can be thought of as a directive to the computer to perform an action. Even that is too vague, so the best thing to do is to see the exhaustive lists of [JavaScript statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements) and [micro:bit TypeScript statements](https://makecode.microbit.org/javascript/statements). Many of them are already familar to you from previous steps.  
+
 
 #### 2. Apply
 [[toc](#table-of-contents)]
