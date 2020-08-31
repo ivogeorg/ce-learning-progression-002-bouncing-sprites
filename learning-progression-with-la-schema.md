@@ -806,9 +806,11 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** logical operators `&&` and `||`  
-**TODO:** Boolean algebra
-**TODO:** composite conditions
+`[<lernact-rd>]`We have seen everything that we need to be able to use _composite conditions_ in conditional statements, to get exactly the complex behavior we want from our programs. Let's recap:
+1. **TODO** Conditions
+2. **TODO** Expressions  
+3. **TODO** Logical operators  
+
 
 #### 2. Apply
 [[toc](#table-of-contents)]
