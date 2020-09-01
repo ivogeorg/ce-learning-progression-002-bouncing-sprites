@@ -846,35 +846,113 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`Blocks, that is lines of code enclosed in curly braces `{}`, not only encapsulate code, but also define `[<cept>]`_variable scope_. The scope of a variable is the region of code where it is defined and accessible. Variables defined in a block are defined and visible to all the code inside the block, including any _nested_ blocks, but **not** outside the block where they are defined. This is called `[<cept>]`_block scoping_ and is an important capability that allows well-organized and modular programs. Let's revisit the various block scopes that we have encountered so far:
+`[<lernact-rd>]`Blocks, that is, lines of code enclosed in curly braces `{}`, not only encapsulate code, but also define `[<cept>]`_scope_ for variables and functions. The scope of a variable of function is the region of code where it is defined and accessible. Variables and functions defined in a block are defined and visible to all the code inside the block, including any _nested_ blocks, but **not** outside the block where they are defined. This is called `[<cept>]`_block scoping_ and is an important feature of programming languages that allows well-organized and modular programs. Let's revisit the various block scopes that we have encountered so far:
 ```javascript
-// Example 8.1
+// Example 8.1.1
 
-// TODO: standalone block
+{
+    let fairyTale : string = "once upon a time..."
+
+    basic.showString(fairyTale)
+    basic.pause(100)
+
+    fairlyTale = "there lived dragons"
+
+    basic.showString(fairyTale)
+    basic.pause(100)
 ```
 This is just a standalone block that does not change the way the lines of code inside are executed, but still performs its scoping function. This kind of block is rarely encountered as it is effectively equivalent to the `[<cept>]`_global scope_, the highest "block" in the nesting hierarchy. Variables declared at this level are called, naturally, `[<cept>]`_global variables_. We have used them a number of times so far.
 
-Loops and conditional statements come with blocks whenever there are more than one line of code to encapsulate:
+Loops and conditional statements come with blocks whenever there is more than one line of code to encapsulate:
 ```javascript
-// Example 8.2
+// Example 8.1.2
 
-// TODO: loop conditional nesting hierarchy
+// here be global scope!
+
+const LED_SIDE : number = 5
+let onOff : boolean = true
+
+while (! stop) {
+    for (let i=0; i < LED_SIDE; i++) {
+        if (i >= 1 && i <= 3) {
+            let x = i
+            let y = i
+            if (onOff) {
+                led.plot(x, y)               // this scope is 4 levels deep relative to global
+            } else {
+                led.unplot(x, y)
+            }    
+        }
+    }
+    onOff = ! onOff
+}
 ```
-Loops and conditional statements are very frequently nested within one another, creating a complex block scoping hierarchy. A good rule of thumb is to declare variables as close as possible to the code that will use them. This allows the programmer to focus on a narrow part of the hierarchy (containing block and contained block) around the variable and get the scoping correct. **TODO:** In the example above...
+Loops and conditional statements are very frequently nested within one another, creating a complex block scoping hierarchy. A good rule of thumb is to declare variables as close as possible to the code that will use them. This allows the programmer to focus on a narrow part of the hierarchy (containing block and contained block) around the variable and get the scoping correct. In the example above:
+1. The variable `onOff` has to be declared in the global scope because it's used in the lower `while`-loop scope.   
+2. The loop variable `i` is scoped within the `for` loop and not "visible" to the `while`-loop scope.  
+3. The (admittedly unnecessary) variables `x` and `y` are declared in the `if` statement and are not visible to the `for`-loop scope.  
 
-**TODO:** Functions
+Functions can be thought of as _named scopes_ with the additional capabilities to receive and return data.
 ```javascript
-// Example 8.3
+// Example 8.1.3
 
-// TODO: function example
+function neighbors(x : number, y : number, on : boolean) : void {
+    for (let i = -1; i < 2; i ++) {
+        for (let j = -1; j < 2; j ++) {
+            if (i != x && j != y) {
+               if (on) 
+                  led.plot(i, j)
+               else
+                  led.unplot(i, j)
+            }
+        }
+    }
+}
+
+neighbors(3, 4, true)
 ```
-**TODO:** Thorough review, including scoping, parameters, arguments and locals, calls and [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)... Data flow throught the scope hierarchy...
+Let's take this example apart:
+1. We are declaring a function called `neighbors` to either turn on or off the neighboring LEDs around a point in the LED matrix.  
+2. The function takes 3 `[<cept>]`_parameters_: `x` and `y` are coordinates, and `on` is a Boolean indicating if neighbors should be turn on or off.  
+3. The function does not return anything, hense the `void` type after the arguments. This is the default, so it can be omitted.  
+4. What are the variables that are _within scope_ of the function:   
+   1. `x`, `y`, and `on` reside in the top scope of the function. That's why we can use them inside all the nested blocks. We can use them absolutely the same way we use variables declared in the top scope of the function, which called `[<cept>]`_local variables_. The only difference is that their values when the function is called are copies of the arguments the function was called with (see (5) below and the next paragraph).          
+   2. `i` resides in the scope of the outer `for` loop and is only used in its block.   
+   3. `j` resides in the scope of the inner `for` loop and is only used in its block.  
+5. The function is called with the `[<cept>]`_arguments_ `3` (for the `x` parameter), `4` (for the `y` parameter), and `true` (for the `on` parameter).
 
-`[<lernact-rd>]`**TODO:** Argument pass by value and reference (see Classes)
+We know we can call the `neighbors` function not only with literal values (here `3`, `4`, and `true`), but also with variables. Let's take a look:
+```javascript
+// Example 8.1.4
 
-`[<lernact-rd>]`**TODO:** Nested function declarations...  (**TODO:** Declaration vs definition in JS?) Returning functions...
+let col : number
+let row : number
 
-`[<lernact-rd>]`**TODO:** A glimpse at `[<cept>]`_stack frames_...
+// some code assigns the variables col and row
+
+neighbors(col, row, col >= row)
+```
+What happens to the values of `col` and `row` when they are used as arguments to a function? Nothing: the function receives _copies_ of their values and, even if it tries to change them like, say `x ++` in its `[<cept>]`_body_ (another synonym for the function block and top scope), the original value of `col` will not be affected. This is called call `[<cept>]`_by value_, because only the values of the variables were used in the arguments to the function, not the variables themselves (meaning the memory locations where they are stored).
+
+Something differet happens with arrays, which as we remember, are _composite types_. The name of the array stands for all the elements it has. And, since the array can have an arbitrary number of elements, its elements cannot all be passed in as arguments to a function, nor, conversely, be retuned from a function, the array is passed into and out of functions `[<cept>]`_by reference_ (meaning the memory address is passed in as an argument to a fucntion or returned from a function), allowing the function to work on the _original_ elements and change their values _in place_. Here's an example (run to convince yourself):
+```javascript
+// Example 8.1.5
+
+let arr : number[] = [1, 2, 3]
+
+function double(a : number[]) {
+    for (let i = 0; i < arr.length; i ++)
+        a[i] *= 2
+}
+
+double(arr)     // arr is passed by reference and the function modifies the original array
+
+arr.forEach(function (value: number, index: number) {
+    basic.showNumber(value)    
+})
+```
+
+`[<lernact-rd>]`We will briefly mention here that functions **can** be declared _inside_ other functions. In this case, they cannot be called outside of the declaring scope unless they are returned out of the function and assigned to a function-valued variable outside it. As a reminder, in JavaScript (and TypeScript, being a superset of JS), functions are `[<cept>]`_first-class citizens_, so anything that can be done with variables in the language is also permitted to be done with functions. This said, it is unlikely that we'll need to use these advanced function features.  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
