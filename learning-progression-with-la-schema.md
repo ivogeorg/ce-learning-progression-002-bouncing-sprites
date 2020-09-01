@@ -806,18 +806,20 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`We have seen everything that we need to be able to use _composite conditions_ in conditional statements, to get exactly the complex behavior we want from our programs. Let's recap:
-1. **TODO** Conditions
-2. **TODO** Expressions  
-3. **TODO** Logical operators  
+`[<lernact-rd>]`We have seen everything that we need to use _composite conditions_ in conditional statements, to get exactly the complex behavior we want from our programs. Let's recap:
+1. Even though only `if...else` can properly be called a _conditional statement_, the `while` and `for` loop statements also include _conditions_.   
+2. Conditions are _expressions_ which evaluate to the Boolean `true` or `false`. Boolean variables are the simplest conditions.  
+3. `true`-`false` expressions can be combined with the Boolean logic operators `&&` (AND), `||` (OR), and `1` (NOT).  
 
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** using `led.plot()`, blink a 3x3 square in the middle of the 5x5 LED matrix...
-2. `[<lernact-prac>]`**TODO:** using `led.plot()`, blink a 3x3 square along the top-left botton-right diagonal...
-3. `[<lernact-prac>]`**TODO:** using `led.plot()`, blink a 3x3 square clockwise and counterclockwise in the corners of the 5x5 LED matrix, using...
+The following exercises can be written in more than one way, but you are encouraged to try your hand at solutions involving composite conditions.
+
+1. `[<lernact-prac>]`Using `led.plot()`, blink a 3x3 square in the middle of the 5x5 LED matrix. At the press of a button A, toggle between "solid" and "hollow" square.  
+2. `[<lernact-prac>]`Using `led.plot()`, blink a 3x3 square along the top-left botton-right diagonal. At the press of a button A, toggle between "solid" and "hollow" square.  
+3. `[<lernact-prac>]`Using `led.plot()`, blink a 3x3 square clockwise and counterclockwise in the corners of the 5x5 LED matrix. At the press of a button A, toggle between "solid" and "hollow" square. At the press of button B, toggle the clockwise-counterclockwise direction.   
 
 #### 3. Present
 [[toc](#table-of-contents)]
