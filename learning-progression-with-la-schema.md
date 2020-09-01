@@ -957,27 +957,39 @@ arr.forEach(function (value: number, index: number) {
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** trailing case for comma-delimited _strings_: declaring the loop variable before the loop, so it can be used after the loop     
-2. `[<lernact-prac>]`**TODO:** declaring the loop variable before the loop, so it can be used as a diagnostic about how the loop terminated (terminal expression or `break`)...    
-3. `[<lernact-prac>]`**TODO:** a number of custom functions with a piece of data passed as argument and re-assigned to return value... (nested function calls)... the `Point` "class" without classes...    
+1. `[<lernact-prac>]`If you needed to print out (aka show) a bunch of strings, one after the other, with commas between all of them, but without a trailing comma (that is, like `I, cannot, believe, my, eyes`), how would you do it? You have the array `["I", "cannot", "believe", "my", "eyes"]`. Use a `for` loop to print the show the strings. _Hint: There are two ways to do it:_
+   1. _One with a check (that is, condition) on the loop variable which is used as the array index. This one is expensive, as the check has to be performed for each value of the loop variable, and for a large array that is considerable overhead._  
+   2. _One with a clever initialization of the loop variable. This one is much cheaper computationally, but it does have a line of redundant code._   
+2. `[<lernact-prac>]`Using the technique from program 8.2.1.2, write a program which:
+   1. Runs a `for` loop. It doesn't have to do anything, but it's up to you.
+   2. In the `for` loop, there is a conditional `break`, based on a random Boolean (remember the function).  
+   3. After the loop terminates, it reports how many iterations were made and whether it terminated naturally or was broken out of. _Hint: How would the number of iterations tell you which one was which termination?_ 
+3. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** In this exercise, we'll motivate _classes_, the topic of the next three steps, so, please follow the instructions and _do not use the built-in methods of arrays_. You have an array of numbers `[5, 9, 17]`. Write:
+   1. A function that returns the length of the array. _Hint: Take a look at what MakeCode does when you try to get an element of the array past the last element, and consider using the function `isNan()`.  
+   2. A function which appends (that is, adds at the end, aka `push`) an element. _Hint: You will need to copy the values of this array to a larger array._  
+   3. A function which removes an element from the end (aka `pop`). _Hint: You will need to copy the values of this array to a smaller array._  
+   4. Using these functions, arrive at the array `[5, 9, 16, 19, 30]` and print the numbers one after the other.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
 
 In the [programs](programs) directory:
 
-1. Add your program from 8.2.1 with filename `microbit-program-8-2-1.js`.  
-2. Add your program from 8.2.2 with filename `microbit-program-8-2-2.js`.  
-3. Add your program from 8.2.3 with filename `microbit-program-8-2-3.js`.
+1. Add your program from 8.2.1.1 with filename `microbit-program-8-2-1-1.js`.  
+2. Add your program from 8.2.1.2 with filename `microbit-program-8-2-1-2.js`.  
+3. Add your program from 8.2.2 with filename `microbit-program-8-2-2.js`.  
+4. Add your program from 8.2.3 with filename `microbit-program-8-2-3.js`.
 
 In the [Lab Notebook](README.md):
 
-1. Link to your program from 8.2.1.  
-2. Link to a demo video for your program from 8.2.1.  
-3. Link to your program from 8.2.2.  
-4. Link to a demo video for your program from 8.2.2.  
-5. Link to your program from 8.2.3.  
-6. Link to a demo video for your program from 8.2.3.
+1. Link to your program from 8.2.1.1.  
+2. Link to a demo video for your program from 8.2.1.1.  
+3. Link to your program from 8.2.1.2.  
+4. Link to a demo video for your program from 8.2.1.2.  
+5. Link to your program from 8.2.2.  
+6. Link to a demo video for your program from 8.2.2.  
+7. Link to your program from 8.2.3.  
+8. Link to a demo video for your program from 8.2.3.
 
 
 ### Step 9: Encapsulating data and functions into classes
