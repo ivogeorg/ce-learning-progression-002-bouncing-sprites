@@ -998,20 +998,74 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`As we saw in the last program of the previous step, it became quite tedious to pass our variable around to many functions and re-assigning the changed value to keep up. This was actually such a big problem in early computing that it brought about the introduction of one of the most powerful programming paradigms, `[<cept>]`_object-oriented programming_. Objects are `[<cept>]`_user-defined composite types_, which encapsulate data along with the `[<cept>]`_methods_ (that is, functions) that can be executed against them. Objects are defined by `[<cept>]`_classes_, which are essentially _object templates_ or _object blueprints_. With this powerful programming language construct, we don't need to pass data around to various functions, trying to keep the data updated at all times. The object-oriented paradigm turn this around: now we create objects which encapsulate this data and call their methods to manipulate the data; all the bookkeeping is taken care for us.
+`[<lernact-rd>]`When a program becomes big, and multiple functions modify the values of multiple variables, programming becomes hard and `[<cept>]`_debugging_ (meaning locating and removing logical errors from the program) becomes even harder. This was actually such a big problem in early computing that it brought about the introduction of one of the most powerful programming paradigms, `[<cept>]`_object-oriented programming_. Objects are `[<cept>]`_user-defined composite types_, which encapsulate data along with the `[<cept>]`_methods_ (that is, functions) that can be executed against them. Objects are defined by `[<cept>]`_classes_, which are essentially _object templates_ or _object blueprints_. In other words, objects are `[<cept>]`_instances_ of [classes](https://makecode.microbit.org/javascript/classes). With this powerful programming language construct, we don't need to pass data around to various functions, trying to keep the data updated at all times. The object-oriented paradigm turns this around: now we create objects which encapsulate this data and call their methods to manipulate the data; all the bookkeeping is taken care of for us.
 
-**TODO:** the `Point` class, fields, constuctor, methods, `this`, instantiation, object lifecycle   
+Let's jump right in with an example of a simple class, called `Point`:
+```javascript
+// Example 9.1.1
 
-**TODO:** the `game.LedSprite`   
+class Point {
+    x : number
+    y : number 
+    
+    constructor(x : number, y : number) {
+        this.x = x
+        this.y = y
+    }
+    
+    move(x_offset : number, y_offset : number) : void {
+        this.x = this.x + x_offset
+        this.y = this.y + y_offset
+    }
+    
+    to_origin() : void {
+        this.x = 0
+        this.y = 0
+    }
+}
+```
+Let's take this apart component by component:
+1. The class is declared starting with the keyword `class`.  
+2. The class is given a name, in our case `Point`.  
+3. The class declares what internal data its instances (that is, the objects of this class). In this case, they are the coordinates `x` and `y`. Internal object data are also called `[<cept>]`_fields_.     
+4. To create instances, the class needs to define a `[<cept>]`_constructor_, a special function that is called once and only once at the declaration of an object variable of this class. This function has the same syntax in all classes, namely `constructor() { ... }`, of course, including parameters between the parentheses.    
+5. The class also defines other `[<cept>]`_methods_ (that is, functions) that the objects can execute (essentially, on themselves) to change their internal data as they move around the program. Notice that we don't use the keyword `function`. This is understood when we type a name with parentheses afterwards, like `my_method(param1, param2) { ... }`!    
+6. These particular methods do not return anything, hence the `: void` at the end of their signatures.  
+7. The class, as usual, defines a scope between its curly braces `{}`.  
 
-**TODO:** So, how is this a "user-defined type"? `string`, behavior, variables!  
+Classes are `[<cept>]`_user-defined data types_. Just like built-in primitive types like `number`, which can participate in arithmetic expressions, and built-in composite types like `string`, which have methods for manipulating their characters, user-defined classes have some data and some operations that are allowed on these data. Just like variables of type `number` or `string` can be declared, so can variables of any user-defined type (aka class) be declared. Let's see this:
+```javascript
+// Example 9.1.2
+
+let p : Point = new Point(2, 1)      // this is where the constructor is called, with the two arguments
+
+p.move(2, 0)
+p.to_origin()
+
+led.plot(p.x, p.y)                   // the internal data can be accessed and used, unless specifically forbidden (we'll see how later)
+```
+We see that variable declaration is the same as for built-in types to the left of the assignment, with the class name being the data type. To the right of the assignment, we use the `new` keyword and call the constructor, with any necessary arguments, by specifying the class name, as if it were a function. (In fact, it is a function, namely, the constructor.)  
+
+We also see that the selector operator `.` works just like for built-in composite types like `string` and array. In fact, `string` is internally declared as a class in JavaScript. MakeCode has several classes that are specific to the micro:bit, the one that we are prodominantly going to work with being the `game.Sprite`, which is just a lit LED that can move around, go brighter or dimmer, bounce off the "walls", etc.
+
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** class `BrightPoint` with brightness (3-dimensional point) with small program...  
-2. `[<lernact-prac>]`**TODO:** class `RandomSquare` with random side (1, 2, 3) and appearing at random places in the matrix...  
-3. `[<lernact-prac>]`**TODO:** class `Slytherin`, a snake with length, moving slowly from left to right or right to left, buttons up and down by one...  
+1. `[<lernact-prac>]`Create a class `BrightPoint`, like `Point` in the example, which also has a numerical `brightness` variable. The brightness of LEDs take values from 0 to 255. Create a few `BrightPoint`s at different locations and with different brightness, and use `led.plotBrightness()` to light them up on the micro:bit LED matrix. _Hint: Remember to add the brightness parameter to the constructor._    
+2. `[<lernact-prac>]`Create a class `RandomSquare` with random side (1, 2, or 3) that can be plotted on the LED matrix. Write a small program to have squares appear on the LED matrix and fade. _Hint: Fading is a gradual decrease in brightness until it reaches 0._   
+3. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Write a class `Slytherin`, which represents a snake with length between 2 and 5, which moves slowly in a straight line, from left to right or right to left. Also:
+   1. There should be only one snake at any point. No new snake should appear until the previous one has slid off the LED matrix.  
+   2. The side and height of appearance of the snake should be randomized.   
+   3. On press of button A, the snake should **move one position up**, and then immediately turn back to its directio of motion.  
+   4. On press of button B, the snake should **move one position down**, and then immediately turn back to its directio of motion. See the sketch of a snake of lenth 3, moving from left to right, starting in the middle:
+      ```
+      °°°°°   °°°°°   °°°°°   °°°°°           °°°°°   °°°°°   °°°°°   °°°°°   °°°°°   °°°°°
+      °°°°°   °°°°°   °°°°°   °°°°°           °°s°°   °°ss°   °°sss   °°°ss   °°°°s   °°°°°
+      °°°°°   s°°°°   ss°°°   sss°°  press A  °ss°°   °°s°°   °°°°°   °°°°°   °°°°°   °°°°°
+      °°°°°   °°°°°   °°°°°   °°°°°           °°°°°   °°°°°   °°°°°   °°°°°   °°°°°   °°°°°
+      °°°°°   °°°°°   °°°°°   °°°°°           °°°°°   °°°°°   °°°°°   °°°°°   °°°°°   °°°°°
+      ```
 
 #### 3. Present
 [[toc](#table-of-contents)]
@@ -1025,7 +1079,7 @@ In the [programs](programs) directory:
 In the [Lab Notebook](README.md):
 
 1. Link to your program from 9.2.1.  
-2. Link to a demo video for your program from 9.2.1.  
+2. Embed an image of your program from 9.2.1 running on the micro:bit.  
 3. Link to your program from 9.2.2.  
 4. Link to a demo video for your program from 9.2.2.  
 5. Link to your program from 9.2.3.  
