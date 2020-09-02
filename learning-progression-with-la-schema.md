@@ -1135,24 +1135,85 @@ In the [Lab Notebook](README.md):
 
 In this step, we'll build a `HaloSprite` class that is almost exactly like the base `LedSprite`, but it has an optional "halo" around it which we can toggle with a button. Here is a [video](https://msudenver.yuja.com/Dashboard/Permalink?authCode=264383293&b=1641139&linkType=video) of our goal.
 
-**TODO:** 8 adjacent positions, brightness => halo
+**Neighbors.** Each (x, y) position in the 5x5 LED matrix, except the ones at the edges and conrners, has 8 adjacent positions. These are the ones we'll use to show a "halo" around a sprite. Note that, if you try to `plot()` a position that is outside of the matrix, nothing happens (meaning the function will accept `[<cept>]`_out-of-bounds_ coordinates). As a reminder, the in-bounds coordinates are x = [0, 4] and y = [0, 4]. We can vary the brightness of the neighboring positions, for example setting the brightness of the neighbors that share a side to be 0.67 of the brightness of the sprite itself, and the brightness of those which are on the diagonals to 0.40 of the brightness of the sprite. See this figure:
+```
+// Example 11.1.1
 
-**TODO:** using a 2-dimensional array to define the halo
+|-------|-------|-------|
+| 0.40b | 0.67b | 0.40b |
+|-------|-------|-------|
+| 0.67b |   b   | 0.67b |
+|-------|-------|-------|
+| 0.40b | 0.67b | 0.40b |
+|-------|-------|-------|
+```
+Obviously, a 2D array will be the best way to describe the neighbors, given the position **(x, y)** of the sprite and the brightness **b**. Here's how it might look:
+```javascript
+// Example 11.1.2
 
-**TODO:** we only want to show the halo around the sprite, not having trailing behind and leaving lit LEDs, so we need to get the current position and brightness, plot the halo, pause briefly so the halo is visible, and then unplot it because the sprite will move away from the current position at the next instant
+neighborArr : number[][]    // a class field
 
-**TODO:** getting the current coordinates and brightness
+neighborArr = [             // initialization of the field, in the constructor
+    [0, 1, 0.67],
+    [-1, -1, 0.40],
+    
+    // the rest of the neighboring positions
+]
+```
+Remembering that the matrix origin (0, 0) is in the top left corner, the shown entries describe the neighbors to the East and to the Northwest of the sprite. So, whatever the position of the sprite (x, y) and its brightness b, we can light up the neighbors accodingly to simulate a halo. All it will take to do so will be to:
+1. Get `x`, `y`, and `b`, using the `LedSprite.get()` method and the `LedSpriteProperty` collection.  
+2. Loop through the array, and use the `led.plot()` method for the neighbors, adding their offsets from `(x, y)` and scaling `b` by the dimness factor, for each neighbor.  
+3. Unplotting can be done with the same loop, using `led.unplot()`, instead. _A short `pause()` might be necessary to make the halo visible._  
 
-**TODO:** plotting and unplotting the halo using a `for` loop
+**Extending a class.** To inherit the properties of the `game.LedSprite` class, our `HaloSprite` needs to be declared as a subclass (aka `[<cept>]`_derived_ class), as follows:
+```javascript
+// Example 11.1.3
 
-**TODO:** modifying the existing `move()` method to add the halo
+class HaloSprite extends game.LedSprite {
+    // class fields
+    
+    constructor() {
+       // initialization, etc.
+    }
+    
+    // class methods
+}
+```
+Notice the keyword `extends` between the names of the derived and parent class (aka superclass).
+
+**Subclass constructor.** The constructor of the `LedSprite` class, which is `[<cept>]`_wrapped_ in the `LedSprite.create()`, only has two parameters, `x` and `y`. So should our own. However, the constructor of the parent class might be doing other initializations of the sprite object that we don't know about, so, when we extend a class, in the constructor of the subclass we always make a call to the superclass constructor before we do anything extra:
+```javascript
+// Example 11.1.4
+
+class HaloSprite extends game.LedSprite {
+    // class fields
+    
+    constructor(x : number, y = number) {
+       // call superclass constructor first
+       super(x, y)
+       
+       // do other field initializations and other object setup
+    }
+    
+    // class methods
+}
+```
+Notice the keyword `super` which is used to call the superclass constructor, in our case that of the `game.LedSprite` class.  
+
+**Overriding a superclass method.** To be able to show the halo while the sprite is in motion, we need to modify it's `move()` method to include the halo code. Since we have to get properties and run 2 loops, it's best to encapsulate this code in a method of its own, say `showHalo()`. Since we don't want to have to write the whole move code anew, we can use the `super` keyword again, to call the superclass `move()` method, and then just call our halo method. Note that, just like referring to object fields requires using `this.` in front, so calling class methods also does require it. Finally, since we want to toggle the halo, we'll most likely have a Boolean field, say `hasHalo`.
+
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** Base program...  
-2. `[<lernact-prac>]`**TODO:** Program to plot and unplot a halo around a certain position, toggled by button B...  
-3. `[<lernact-prac>]`**TODO:** Putting it all together in `HaloSprite`...  
+1. `[<lernact-prac>]`Using the original `game.LedSprite` methods, write a program to:
+   1. Have the sprite move around, bouncing off the walls. _Hint: `move()` only takes the number of positions to advance in the current **direction**. Also, there already is a method for bouncing :)**  
+   2. On pressing button B, the sprite's direction changes by 45° to the left. _Hint: Take a look at the `turn` method._  
+2. `[<lernact-prac>]`Write a program to plot and unplot a halo around the sprite at a certain position, toggled by button A.  
+3. `[<lernact-prac>]`Put it all together in `HaloSprite`. Notes:
+   1. All the tricky bits of the inheritance code were presented in the Study part.  
+   2. The body for `showHalo()` you just wrote in program 11.2.2. Now just move it to the class method. _Hint: The event handler for the button press probably doesn't belong inside the class scope. What do you think?_  
+   3. Once the derived class is declared, and a `HaloSprite` is created instead of the `game.LedSprite`, the rest of the program remains exactly the same. This is the coolest thing about inheritance.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
