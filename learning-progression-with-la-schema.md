@@ -1092,18 +1092,19 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** objects are independent entities, with their own lifecycle...   
-**TODO:** A glimpse at memory storage: object data vs methods...   
-**TODO:** More on `this`  
+`[<lernact-rd>]`The power of the object-oriented paradigm comes from the fact that objects are independent entities, with their own lifecycle: they get created, they compute and behave, and they are deleted when no longer useful. Moreover, the human mind has evolved to think in object-oriented terms. The notion of an object, an entity that holds together its components, and more often then has persistent shape, is deeply rooted in human thinking.   
 
-**TODO:** Argument pass by reference(?)...
+The meaning and function of the keyword `this` which you saw in the previous step, is intimately related to the notion of an object in the context of programming and computation. Each object of a class has its own memory location to hold its data fields, but when it comes to executing the methods, they are all in one place, in the class. `this` translates internally to the address of the object's memory location. So, when executing a particular method, the method needs `this` so it operates on the given object's data. This is - no pun intended! - a rough explanation, the full gory details of which can be found in the [`this` documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) and are beyond the scope of this curriculum.
+
+One last thing we need to point out about classes is that, just like we saw with arrays, objects are passed _by reference_, because, jast as arrays, their names really are memory addresses under the hood.
+
 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`**TODO:** Program that spawns many sprites, doing different things...  
-2. `[<lernact-prac>]`**TODO:** Program that spawns many 3-point sprites, doing different things...  
-3. `[<lernact-prac>]`**TODO:** Program showcasing the lifecycle of 3-point sprites, blinking at different frequencies...  
+1. `[<lernact-prac>]`Using the functions of the `game` package, write a program to create several sprites that do different things around the LED matrix: randomly appear and disappear, move around and bounce off the walls, etc. Feel free to use the MakeCode guides, tutorials, and projects that pertain to `game.Sprite`. Explore especially the `move`, `turn`, `change`, and `delete` methods, and the `LedSpriteProperty` `enum` type. The class is written for you, so the criterion is to go the extra mile to create something eye-catching and fun.  
+2. `[<lernact-prac>]`Go back to your `BrightSprite` and add a `move` method which randomly chooses to change to a neighboring position, _wrapping around the edges_ correctly. Spawn a few `BrightSprite`s at different locations and with different brightnesses, and have them move about.    
+3. `[<lernact-prac>]`Make your `BrightSprite` blink at one of 3 different rates. Create a few sprites and have the move about, blinking each at its rate.    
 
 #### 3. Present
 [[toc](#table-of-contents)]
