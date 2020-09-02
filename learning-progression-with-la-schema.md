@@ -1207,7 +1207,10 @@ Notice the keyword `super` which is used to call the superclass constructor, in 
 [[toc](#table-of-contents)]
 
 1. `[<lernact-prac>]`Using the original `game.LedSprite` methods, write a program to:
-   1. Have the sprite move around, bouncing off the walls. _Hint: `move()` only takes the number of positions to advance in the current **direction**. Also, there already is a method for bouncing :)**  
+   1. Have the sprite move around, bouncing off the walls. _Hints:_ 
+      1. _`move()` only takes the number of positions to advance in the current **direction**._  
+      2. _There already is a method for bouncing :)_  
+      3. _Finally, you may want to have a `pause()` between moves to keep the sprite visible._  
    2. On pressing button B, the sprite's direction changes by 45° to the left. _Hint: Take a look at the `turn` method._  
 2. `[<lernact-prac>]`Write a program to plot and unplot a halo around the sprite at a certain position, toggled by button A.  
 3. `[<lernact-prac>]`Put it all together in `HaloSprite`. Notes:
