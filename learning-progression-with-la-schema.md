@@ -1179,31 +1179,34 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** How do the lines of program code that we write actually get executed. They don't, until they are transformed into processor instructions. User code to cpu instructions: overview of the compilation process...   
+`[<lernact-rd>]`How do the lines of program code that we write actually get executed. They don't! Until they are transformed into long sequences of processor instructions. This process is called `[<cept>]`_compilation_ and, as it is quite involved, we won't delve more deeply into it until a later progression. Suffice it to say that programs are converted to machine [instructions](https://developer.arm.com/documentation/ddi0432/c/programmers-model/instruction-set-summary), in which form they are called `[<cept>]`_assembly_, and these instructions are what the processor actually executes.
 
-**TODO:** How do the language constructs - loops, conditional statements, functions, and classes - affect the execution order of sequences of processor instructions...
+How do the language constructs we encountered - loops, conditional statements, functions, and classes - affect the execution order of sequences of processor instructions? Here is an overview sketch: 
 
 <img src="images/asm-exect-branch-patterns.png" alt="Assembly-level program execution and branching patterns" width="800" />
-Assembly-level execution:
-- sequential  
-- branches:  
-  - `if...else`  
-  - loops  
-  - function calls  
-  - object methods  
+
+As you can see, whenever we have a conditional, a loop, or a function call, there is a lot of branching going on. When a branch occurs, that is, when the processor cannot execute the next instruction in memory but has to "jump" to a different (and maybe distant) part of the program and pick up there, a lot of the current data in the processor has to be saved and/or discarded, and the new data loaded.
   
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-disc>]`**[Optional challenge, max 10 extra step points]** We have shown how all of our familar programming language constructs actually execute on the processor, except one, namely handling external events like `input.onButtonPressed()`. Using sketches, code snippets, documentation references, and original narrative, show how the processor handles external events. Consider using the following resources:  
-   1. [The micro:bit - a reactive system](https://makecode.microbit.org/device/reactive)
-   2. **TODO:** Resource links  
+1. `[<lernact-disc>]`Explain what branching is and whether it is or isn't computationally expensive. Motivate your answer.    
+2. `[<lernact-disc>]`**[Optional challenge, max 10 extra step points]** We have shown how all of our familar programming language constructs actually execute on the processor, except one, namely handling external events like `input.onButtonPressed()`. Using sketches, code snippets, documentation references, and original narrative, show how the processor handles external events. Consider using the following resources:  
+   1. [The micro:bit - a reactive system](https://makecode.microbit.org/device/reactive).  
+   2. [Exploring the BBC micro:bit Software Stack](https://mattwarren.org/2017/11/28/Exploring-the-BBC-microbit-Software-Stack/).    
 
 #### 3. Present
 [[toc](#table-of-contents)]
 
+In the [Lab Notebook](README.md):
+
+1. Write your explanation on the topic in 12.2.1.
+2. Write your explanation on the topic in 12.2.2.
 
 ## References and Resources
 
-1. [JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript).  
-2. 
+1. [JavaScript Language Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript).  
+2. [TypeScript Language Documentation](https://www.typescriptlang.org/docs/).  
+3. [ARM Cortex-M Processor Architecture](https://en.wikipedia.org/wiki/ARM_Cortex-M).  
+4. [ARM®v6-M Architecture Reference Manual](https://static.docs.arm.com/ddi0419/d/DDI0419D_armv6m_arm.pdf). The instruction set is in Chapter 4A.  
+5. [ARM®: Branch and Call Sequences Explained](https://community.arm.com/developer/ip-products/processors/b/processors-ip-blog/posts/branch-and-call-sequences-explained).  
