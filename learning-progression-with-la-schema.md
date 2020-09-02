@@ -1182,7 +1182,8 @@ In the [Lab Notebook](README.md):
 `[<lernact-rd>]`**TODO:** How do the lines of program code that we write actually get executed. They don't, until they are transformed into processor instructions. User code to cpu instructions: overview of the compilation process...   
 
 **TODO:** How do the language constructs - loops, conditional statements, functions, and classes - affect the execution order of sequences of processor instructions...
-**TODO:**<img src="" alt="" width="" />
+
+<img src="images/asm-exect-branch-patterns.png" alt="Assembly-level program execution and branching patterns" width="800" />
 Assembly-level execution:
 - sequential  
 - branches:  
