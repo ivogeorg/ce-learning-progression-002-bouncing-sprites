@@ -1046,7 +1046,7 @@ led.plot(p.x, p.y)                   // the internal data can be accessed and us
 ```
 We see that variable declaration is the same as for built-in types to the left of the assignment, with the class name being the data type. To the right of the assignment, we use the `new` keyword and call the constructor, with any necessary arguments, by specifying the class name, as if it were a function. (In fact, it is a function, namely, the constructor.)  
 
-We also see that the selector operator `.` works just like for built-in composite types like `string` and array. In fact, `string` is internally declared as a class in JavaScript. MakeCode has several classes that are specific to the micro:bit, the one that we are prodominantly going to work with being the `game.Sprite`, which is just a lit LED that can move around, go brighter or dimmer, bounce off the "walls", etc.
+We also see that the selector operator `.` works just like for built-in composite types like `string` and array. In fact, `string` is internally declared as a class in JavaScript. MakeCode has several classes that are specific to the micro:bit, the one that we are prodominantly going to work with being the `game.LedSprite`, which is just a lit LED that can move around, go brighter or dimmer, bounce off the "walls", etc.
 
 
 #### 2. Apply
@@ -1102,7 +1102,7 @@ One last thing we need to point out about classes is that, just like we saw with
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`Using the functions of the `game` package, write a program to create several sprites that do different things around the LED matrix: randomly appear and disappear, move around and bounce off the walls, etc. Feel free to use the MakeCode guides, tutorials, and projects that pertain to `game.Sprite`. Explore especially the `move`, `turn`, `change`, and `delete` methods, and the `LedSpriteProperty` `enum` type. The class is written for you, so the criterion is to go the extra mile to create something eye-catching and fun.  
+1. `[<lernact-prac>]`Using the functions of the `game` package, write a program to create several sprites that do different things around the LED matrix: randomly appear and disappear, move around and bounce off the walls, etc. Feel free to use the MakeCode guides, tutorials, and projects that pertain to `game.LedSprite`. Explore especially the `create`, `move`, `turn`, `change`, and `delete` methods, as well as the `LedSpriteProperty` `enum` type. The class is written for you, so the criterion is to go the extra mile to create something eye-catching and fun.  
 2. `[<lernact-prac>]`Go back to your `BrightSprite` and add a `move` method which randomly chooses to change to a neighboring position, _wrapping around the edges_ correctly. Spawn a few `BrightSprite`s at different locations and with different brightnesses, and have them move about.    
 3. `[<lernact-prac>]`Make your `BrightSprite` blink at one of 3 different rates. Create a few sprites and have the move about, blinking each at its rate.    
 
@@ -1131,9 +1131,11 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`**TODO:** What if we generally like the capabilities of `LedSprite` objects, but we are not quite satisfied? What if we want to tweak them a little bit but don't actually want to go out of our way to rewrite the whole class? One of the foremost features of object-oriented programming is the ability to fine tune classes by extending and/or specifying the object behavior they define. Because we are actually creating a new class on top of an existing one, without changing the existing one, this programming language feature is called `[<cept>]`_inheritance_. The class we are building on top of is called the `[<cept>]`_superclass_ or `[<cept>]`_base class_, and our derived class is called a `[<cept>]`_subclass_. 
+`[<lernact-rd>]`What if we generally like the capabilities of `game.LedSprite` objects, but we are not quite satisfied? What if we want to tweak them a little bit but don't actually want to go out of our way to rewrite the whole class? One of the foremost features of object-oriented programming is the ability to fine tune classes by extending and/or specifying the object behavior they define. Because we are actually creating a new class on top of an existing one, without changing the existing one, this programming language feature is called `[<cept>]`_inheritance_. The class we are building on top of is called the `[<cept>]`_superclass_ or `[<cept>]`_base class_, and our derived class, which _inherits_ and possibly extends and/or specifies the behavior of the base class, is called a `[<cept>]`_subclass_. 
 
-In this step, we'll build a `HaloSprite` class that is almost exactly like the base `LedSprite`, but it has an optional "halo" around it which we can toggle with a button. **TODO:** 8 adjacent positions, brightness => halo
+In this step, we'll build a `HaloSprite` class that is almost exactly like the base `LedSprite`, but it has an optional "halo" around it which we can toggle with a button. Here is a [video](https://msudenver.yuja.com/Dashboard/Permalink?authCode=264383293&b=1641139&linkType=video) of our goal.
+
+**TODO:** 8 adjacent positions, brightness => halo
 
 **TODO:** using a 2-dimensional array to define the halo
 
