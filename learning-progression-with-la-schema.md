@@ -1243,7 +1243,7 @@ In the [Lab Notebook](README.md):
 #### 1. Study
 [[toc](#table-of-contents)]
 
-`[<lernact-rd>]`How do the lines of program code that we write actually get executed. They don't! Until they are transformed into long sequences of processor instructions. This process is called `[<cept>]`_compilation_ and, as it is quite involved, we won't delve more deeply into it until a later progression. Suffice it to say that programs are converted to machine [instructions](https://developer.arm.com/documentation/ddi0432/c/programmers-model/instruction-set-summary), in which form they are called `[<cept>]`_assembly_, and these instructions are what the processor actually executes.
+`[<lernact-rd>]`How do the lines of program code that we write actually get executed. They don't! Until they are transformed into long sequences of processor instructions. This process is called `[<cept>]`_compilation_ and, as it is quite involved, we won't delve more deeply into it until a later progression. Suffice it to say that programs are converted to simple machine [instructions](https://developer.arm.com/documentation/ddi0432/c/programmers-model/instruction-set-summary), in which form they are called `[<cept>]`_assembly_, and these instructions are what the processor actually executes.
 
 How do the language constructs we encountered - loops, conditional statements, functions, and classes - affect the execution order of sequences of processor instructions? Here is an overview sketch: 
 
