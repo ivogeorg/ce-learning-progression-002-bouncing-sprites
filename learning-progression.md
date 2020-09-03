@@ -860,6 +860,7 @@ Blocks, that is, lines of code enclosed in curly braces `{}`, not only encapsula
 
     basic.showString(fairyTale)
     basic.pause(100)
+}
 ```
 This is just a standalone block that does not change the way the lines of code inside are executed, but still performs its scoping function. This kind of block is rarely encountered as it is effectively equivalent to the _global scope_, the highest "block" in the nesting hierarchy. Variables declared at this level are called, naturally, _global variables_. We have used them a number of times so far.
 
