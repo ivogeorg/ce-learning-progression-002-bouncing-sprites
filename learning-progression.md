@@ -210,20 +210,7 @@ Loops can be _nested_ (e.g. a `for` loop inside a `for` loop, or a `for` loop in
 ```javascript
 // Example 2.1.2
 
-let on : boolean = true
-
-basic.forever(function () {
-    for (let x = 0; x < 5; x ++) {
-        for (let y = 0; y < 5; y ++) {
-            if (on) 
-                led.plot(x, y)
-            else
-                led.unplot(x, y)
-            basic.pause(50)
-        }
-    }
-    on = !on
-})
+ Example 2.1.3
 ```
 It is important to note that a `break` only exits the _innermost_ loop, and any outer loops will continue to execute, as shown in this example:
 ```javascript
@@ -238,13 +225,22 @@ basic.forever(function () {
     for (let x = 0; x < 5; x ++) {
         for (let y = 0; y < 5; y ++) {
             if (halfWay)
+            {
                 if (y > 2)
+                    {
                     break
+                    }
+                
             if (on) 
+                {
                 led.plot(x, y)
+                }
             else
+                { 
                 led.unplot(x, y)
-            basic.pause(50)
+                basic.pause(50)
+                }
+            }
         }
     }
     on = !on
