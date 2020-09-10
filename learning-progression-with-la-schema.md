@@ -141,7 +141,7 @@ The `[<cept>]`_square brackets_ `[]` indicate an _optional_ element. All three `
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`Write a program that shows a heart icon for odd numbers and pauses for 100 ms for even numbers in a `for` loop from 0 to 10 (not inclusive). _Hint: You will need to use the loop variable of the `for` loop to check for odd and even numbers and have an `if...else` conditional statement in the block of the loop._  
+1. `[<lernact-prac>]`Write a program which, in a `for` loop from 0 to 10 (not inclusive), shows a heart icon for odd values of the loop variable `i` and a giraffe icon for even values of `i`. _Hint: You will need to use the loop variable of the `for` loop to check for odd and even numbers and have an `if...else` conditional statement in the block of the loop._  
 2. `[<lernact-prac>]`Write a program shown executing on the micro:bit in the this [video](https://msudenver.yuja.com/Dashboard/Permalink?authCode=754064295&b=1599792&linkType=video). It may look quite differnt from the examples, but it's very similar. Some hints:
    1. Use a `for` loop, of course.  
    2. To figure out what values the loop variable should take, realize that the micro:bit LED matrix has coordinates y = [0, 4] vertically from top to bottom and x = [0, 4] from left to right. So, the `[<cept>]`_origin_ (0, 0) is in the top-left corner.  
