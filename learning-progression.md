@@ -93,7 +93,7 @@ Several things to notice here:
    3. **Convention.** It pays to follow the convention, for example, to avoid the _off-by-one_ error, usually to do with [arrays](#step-3-arrays-are-the-best-use-for-loops).     
 4. It is a widely adopted practice to give constants names in `ALL_CAPS`.  
 
-**Question 1.1.1:** Enumerate the values of the _loop variable_ `i` is the block of the `for` loop executed.    
+`[<lernact-ans>]`**Question 1.1.1:** Enumerate the values of the _loop variable_ `i` takes as the `while` loop is executed.    
 **Question 1.1.2:** What is the value of the loop variable _after_ the termination of the loop? _Hint: Skim the reference section on [block-scoping](https://makecode.microbit.org/javascript/variables) of variables._  
 **Question 1.1.3:** Enumerate the different unsigned binary integers you can represent with 4 bits?  
 
