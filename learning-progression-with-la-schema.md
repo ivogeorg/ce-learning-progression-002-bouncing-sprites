@@ -255,9 +255,9 @@ Notice how, when you toggle button A, the LED lighting pattern goes all the way 
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`Write a program like Example 2.2 above, which instead fills the pattern one _row_ at a time.  
-2. `[<lernact-prac>]`Write a program like Example 2.3 above, which instead fills in the other remaining "half" when `halfWay` is toggled true.  
-3. `[<lernact-prac>]`Write a program like Example 2.3 above, which instead breaks on the value of the outer-loop variable `x`.  
+1. `[<lernact-prac>]`Write a program like Example 2.1.2 above, which instead fills the pattern one _row_ at a time.  
+2. `[<lernact-prac>]`Write a program like Example 2.1.3 above, which instead fills in the other remaining "half" when `halfWay` is toggled true.  
+3. `[<lernact-prac>]`Write a program like Example 2.1.3 above, which instead breaks on the value of the outer-loop variable `x`.  
 4. `[<lernact-ans>]`Explain the behavior you observe in your program from 2.2.3.
 
 
