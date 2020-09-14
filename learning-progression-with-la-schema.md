@@ -404,7 +404,7 @@ You might recognize the function-as-an-argument paradigm that is so fundamental 
 2. `[<lernact-prac>]`Show the icons from the previous program in reverse order in two different way:
    1. By manipulating the loop variable `i` to count backwords. _Hint: What would be the corresponding unary decrement operator?_  
    2. By using the arrays's `reverse()` method.  
-3. `[<lernact-prac>]`Take Example 2.1.3 and create two number arrays, `xArr` and `yArr`, where the columna and row indices are _scrambled_ (that is, not in order). Then, instead of plotting `x` and `y`, use the loop variables as indices into the two arrays.
+3. `[<lernact-prac>]`Take Example 2.1.3 and create two number arrays, `xArr` and `yArr`, where the values are the _scrambled_ (that is, not in order) column and row indices. Then, instead of plotting `x` and `y`, use them loop variables as indices into the two arrays.
 
 #### 3. Present
 [[toc](#table-of-contents)]
