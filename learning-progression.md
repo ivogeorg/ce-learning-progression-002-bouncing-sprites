@@ -401,7 +401,7 @@ You might recognize the function-as-an-argument paradigm that is so fundamental 
 [[toc](#table-of-contents)]
 
 1. Extend Example 3.1.6 to show 5 different icons and, using the loop variable `i`, show each subsequent one for a shorter period of time.  
-2. Show the icons from the previous program in reverse order in two different way:
+2. Show the icons from the previous program in reverse order in two different ways:
    1. By manipulating the loop variable `i` to count backwords. _Hint: What would be the corresponding unary decrement operator?_  
    2. By using the arrays's `reverse()` method.  
 3. Take Example 2.1.3 and create two number arrays, `xArr` and `yArr`, where the values are the _scrambled_ (that is, not in order) column and row indices. Then, instead of plotting `x` and `y`, use the loop variables as indices into the two arrays.
