@@ -142,7 +142,7 @@ The _square brackets_ `[]` indicate an _optional_ element. All three _expression
 [[toc](#table-of-contents)]
 
 1. Write a program which, in a `for` loop from 0 to 10 (not inclusive), shows a heart icon for odd values of the loop variable `i` and a giraffe icon for even values of `i`. _Hint: You will need to use the loop variable of the `for` loop to check for odd and even numbers and have an `if...else` conditional statement in the block of the loop._  
-2. Write a program shown executing on the micro:bit in the this [video](https://msudenver.yuja.com/Dashboard/Permalink?authCode=754064295&b=1599792&linkType=video). It may look quite differnt from the examples, but it's very similar. Some hints:
+2. Write a program shown executing on the micro:bit in the this [video](https://msudenver.yuja.com/Dashboard/Permalink?authCode=754064295&b=1599792&linkType=video). It may look quite different from the examples, but it's very similar. Some hints:
    1. Use a `for` loop, of course.  
    2. To figure out what values the loop variable should take, realize that the micro:bit LED matrix has coordinates y = [0, 4] vertically from top to bottom and x = [0, 4] from left to right. So, the _origin_ (0, 0) is in the top-left corner.  
    3. Use the `led.plot()` function, utilizing the loop variable `i`. Note that you are plotting the _diagonal_.  
