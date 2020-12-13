@@ -965,7 +965,7 @@ arr.forEach(function (value: number, index: number) {
    1. Runs a `for` loop. It doesn't have to do anything, but it's up to you.
    2. In the `for` loop, there is a conditional `break`, based on a random Boolean (remember the function).  
    3. After the loop terminates, it reports how many iterations were made and whether it terminated naturally or was broken out of. _Hint: How would the number of iterations tell you which one was which termination?_ 
-3. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** In this exercise, we'll motivate _classes_, the topic of the next three steps, so, please follow the instructions and _do not use the built-in methods of arrays_. You have an array of numbers `[5, 9, 17]`. Write:
+3. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** In this exercise, we'll motivate _classes_, the topic of the next three steps, so, please follow the instructions and _do not use the built-in array methods_. You have the array of numbers `[5, 9, 17]`. Write:
    1. A function that returns the length of the array. _Hint: Take a look at what MakeCode does when you try to get an element of the array past the last element, and consider using the function `isNan()`.  
    2. A function which appends (that is, adds at the end, aka `push`) an element. _Hint: You will need to copy the values of this array to a larger array._  
    3. A function which removes an element from the end (aka `pop`). _Hint: You will need to copy the values of this array to a smaller array._  
