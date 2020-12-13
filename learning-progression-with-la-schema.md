@@ -782,7 +782,7 @@ Another term that appears often when expressions are discussed is `[<cept>]`_sta
    1. Picks and lights two random points on the micro:bit LED matrix.  
    2. Lights that line. Note that due to the low resolution, it will be heavily `[<cept>]`_aliased_ and crude. You will need to pick which LED positions belong to the line mathematically.  
    3. Draws a second line which is `[<cept>]`_orthogonal_ to the first one, and most closely _bisects_ it.  
-   4. One pressing the A button, new two points are picked and the procedure is repeated.  
+   4. On pressing button A, two new points are picked and the above procedure is repeated.  
 
 #### 3. Present
 [[toc](#table-of-contents)]
