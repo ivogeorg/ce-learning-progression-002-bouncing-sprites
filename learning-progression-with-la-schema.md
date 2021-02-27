@@ -587,7 +587,7 @@ In general, `switch` statements are best for numerical equalities and `if...else
    ```
    So, the first one, at index 0, is `IconNames.Heart`, and the last one, at index 39, is... I have no idea :-o. Anyway, write a program that shows only _odd_ icons.  
 2. `[<lernact-prac>]`Cycle through the icons and show the ones in the index range 0-9 for 100 ms, 10-19 for 200 ms, etc., that is, for a time proportional to the decade of their index.  
-3. `[<lernact-prac>]`Cycle through the icons and, using a `switch` statement, show them as many times as the `[<cept>]`_remainder_ of their index divided by 7. The `[<cept>]`_modulo_ operator `%` will come useful. The expression `x % y` gives you the remainder of the division of `x` by `y`.      
+3. `[<lernact-prac>]`**TODO (ivogeorg, 2021-02-27): Too contrived. Redo.** Cycle through the icons and, using a `switch` statement, show them as many times as the `[<cept>]`_remainder_ of their index divided by 7. The `[<cept>]`_modulo_ operator `%` will come useful. The expression `x % y` gives you the remainder of the division of `x` by `y`.      
 4. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Cycle through the icons and, using a `switch` statement, show them as many times as the smallest odd `[<cept>]`_divisor_ of their index (3 times if divisible by 3, 5 if divisible by 5 but not by 3, etc.), 2 times if the index is even, and only once if their index is `[<cept>]`_prime_. Hints and notes:
    1. It is natural to use a `for` loop to cycle through the icons (as natural numbers).  
    2. For the `switch` expression, consider using the `[<cept>]`_division_ operator `/` and the function `Math.floor()`.    
