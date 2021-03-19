@@ -811,6 +811,7 @@ In the [Lab Notebook](README.md):
 2. Conditions are _expressions_ which evaluate to the Boolean `true` or `false`. Boolean variables are the simplest conditions.  
 3. `true`-`false` expressions can be combined with the Boolean logic operators `&&` (AND), `||` (OR), and `1` (NOT).  
 
+**[TODO, ivogeorg, 2021-03-19]:** This needs a walkthrough and a variety of examples. As an advanced aside, explain Boolean algebra, esp. the equivalence of `!(a &&b)` and `!a||!b`.  
 
 #### 2. Apply
 [[toc](#table-of-contents)]
