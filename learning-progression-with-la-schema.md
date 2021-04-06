@@ -773,12 +773,21 @@ Another term that appears often when expressions are discussed is `[<cept>]`_sta
 #### 2. Apply
 [[toc](#table-of-contents)]
 
-1. `[<lernact-prac>]`Write a program which:
+1. `[<lernact-prac>]`Write the following program:
+   1. In a loop, generate random points (x, y) for the LED matrix. So, x and y are both between 0 and 4. 
+   2. The loop stops with the first pair of points which have one _same_ and one _different_ coordinate. These points are going to lie either on the same row (y-s are equal) or on the same column (x-s are equal).
+   3. Light up these two points. They define a horizontal or vertical line.
+   4. In a loop of 100 or more iterations, generate random points and only light them up if:
+      1. If the line is horizontal, the points lie strictly below it.
+      2. If the line is vertical, the points lie strictly to the right of it.
+   5. This should result in all points on the correct side being lit up.
+   6. Repeat from the beginning.
+2. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Write a program which:
    1. Picks and lights two random points on the micro:bit LED matrix.  
    2. Then, in a loop, starts generating random points one by one.  
    3. Each generated point is compared to the line defined by the points in (1), and, if it is **below and/or to the right of the line**, it is lit up.  
    4. Runs until the region below and/or to the right of the line is filled up.  
-2. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Write a program which:
+3. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Write a program which:
    1. Picks and lights two random points on the micro:bit LED matrix.  
    2. Lights that line. Note that due to the low resolution, it will be heavily `[<cept>]`_aliased_ and crude. You will need to pick which LED positions belong to the line mathematically.  
    3. Draws a second line which is `[<cept>]`_orthogonal_ to the first one, and most closely _bisects_ it.  
@@ -791,6 +800,7 @@ In the [programs](programs) directory:
 
 1. Add your program from 6.2.1 with filename `microbit-program-6-2-1.js`.  
 2. Add your program from 6.2.2 with filename `microbit-program-6-2-2.js`.  
+3. Add your program from 6.2.3 with filename `microbit-program-6-2-3.js`.  
 
 In the [Lab Notebook](README.md):
 
@@ -798,6 +808,8 @@ In the [Lab Notebook](README.md):
 2. Link to a demo video for your program from 6.2.1.  
 3. Link to your program from 6.2.2.  
 4. Link to a demo video for your program from 6.2.2.  
+5. Link to your program from 6.2.3.  
+6. Link to a demo video for your program from 6.2.3.  
 
 
 ### Step 7: Composite conditions
