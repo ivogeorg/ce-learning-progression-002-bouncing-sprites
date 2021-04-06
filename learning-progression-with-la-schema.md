@@ -831,8 +831,8 @@ In the [Lab Notebook](README.md):
 The following exercises can be written in more than one way, but you are encouraged to try your hand at solutions involving composite conditions.
 
 1. `[<lernact-prac>]`Using `led.plot()`, blink a 3x3 square in the middle of the 5x5 LED matrix. At the press of a button A, toggle between "solid" and "hollow" square.  
-2. `[<lernact-prac>]`Using `led.plot()`, blink a 3x3 square along the top-left botton-right diagonal. At the press of a button A, toggle between "solid" and "hollow" square.  
-3. `[<lernact-prac>]`Using `led.plot()`, blink a 3x3 square clockwise and counterclockwise in the corners of the 5x5 LED matrix. At the press of a button A, toggle between "solid" and "hollow" square. At the press of button B, toggle the clockwise-counterclockwise direction.   
+2. `[<lernact-prac>]`Using `led.plot()`, move continuously a 3x3 square along the top-left botton-right diagonal. (You can either do a back-and-forth motion or restart at top-left when you reach bottom-right. Either one is fine.) At the press of a button A, toggle between "solid" and "hollow" square.  
+3. `[<lernact-prac>]`**[Optional challenge, max 3 extra step points]** Using `led.plot()`, move continuously a 3x3 square clockwise and counterclockwise along the 4 corners of the 5x5 LED matrix. At the press of a button A, toggle between "solid" and "hollow" square. At the press of button B, toggle the clockwise-counterclockwise direction.   
 
 #### 3. Present
 [[toc](#table-of-contents)]
