@@ -773,6 +773,8 @@ Another term that appears often when expressions are discussed is `[<cept>]`_sta
 #### 2. Apply
 [[toc](#table-of-contents)]
 
+**TODO:** The first challenge can/should be solved using [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm).
+
 1. `[<lernact-prac>]`Write the following program:
    1. In a loop, generate random points (x, y) for the LED matrix. So, x and y are both between 0 and 4. 
    2. The loop stops with the first pair of points which have one _same_ and one _different_ coordinate. These points are going to lie either on the same row (y-s are equal) or on the same column (x-s are equal).
