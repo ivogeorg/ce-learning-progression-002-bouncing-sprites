@@ -302,7 +302,7 @@ let b : boolean = true
 
 let iArr : number[] = [0, 1, 2]                                        // an array of integers, initialized with literal values
 let fArr : number[] = [3.14, 3.142, 3.1416, 3.14159]                   // an array of floating-point numbers, also initialized with literal values
-let bArr : number[] = [false, true, true, false]                       // an array of Booleans
+let bArr : boolean[] = [false, true, true, false]                      // an array of Booleans
 
 let sArr : string[] = ["Hellow", "world", "the", "microbit", "rocks"]  // an array of strings (words of text or sequences of characters)
 let twoDArr : number[][] = [[1, 3, 4], [3, 4, 5, 6, 7]]                // a 2-dimensional array, that is, an array of arrays (in this case of numbers)
